@@ -53,7 +53,6 @@
 
 - Querying documents
 - Updating and deleting documents
-- Using Mongoose middleware and virtuals
 - Introduction to user authentication with password hashing
 
 ### Day 4: Maintaining Sessions and Role-Based Access Control (RBAC)
@@ -93,73 +92,75 @@
 - File uploads and handling multipart/form-data
 - Integrating third-party APIs
 
-### Day 5: Review and Practice
+### Day 5: Review and Deployment
 
-- Completing a feature-rich backend for the capstone project
-- Code review and refactoring
-- Q&A and troubleshooting
+- Finalizing the API with role-based access control and validation
+- Preparing the API for deployment
+- Deploying the API to Render.com
+- Testing the deployed API
 
-## Week 4: AWS Practitioner Material
+## Week 4: AWS Practitioner Material (Using AWS Slides)
 
-### Day 1: Introduction to AWS
+### Day 1: Section 1
 
-- Overview of AWS services
-- Setting up an AWS account
-- Understanding the AWS Management Console
+- Getting Started with AWS - Introduction
+- IAM - Identity and Access Management Basics
+- Hands-On: IAM - Creating Users and Managing Permissions
 
-### Day 2: Compute Services
+### Day 2: Sections 2 and 3
 
-- Introduction to EC2
-- Launching and managing EC2 instances
-- Using Elastic Beanstalk for application deployment
+- Understanding AWS EC2 - Elastic Compute Cloud
+- Introduction to Security Groups in AWS EC2
+- Hands-On: Setting Up an EC2 Instance
 
-### Day 3: Storage Services
+### Day 3: Sections 4 and 5
 
-- Overview of S3 and EBS
-- Managing storage with S3
-- Backup and restore with AWS storage services
+- Understanding High Availability, Horizontal Scaling, and Vertical Scaling
+- Elastic Load Balancing (ELB) and Load Balancers
+- Auto Scaling Groups (ASGs) Overview
 
-### Day 4: Database Services
+### Day 4: Section 6
 
-- Introduction to RDS and DynamoDB
-- Setting up and managing RDS instances
-- Using DynamoDB for NoSQL databases
+- Databases Overview
+- Databases - RDS Overview
+- Overview of Amazon Aurora
 
-### Day 5: Review and Practice
+### Day 5: Sections 7, 8, and 9
 
-- Hands-on labs with AWS services
-- Q&A and troubleshooting
+- Introduction to Docker
+- Understanding ECS, Fargate, and ECR
+- Understanding Serverless Computing
 
-## Week 5: AWS Practitioner Material
+## Week 5: AWS Practitioner Material (Using AWS Slides)
 
-### Day 1: Networking and Content Delivery
+### Day 1: Sections 10, 11, and 12
 
-- Introduction to VPC and networking in AWS
-- Setting up and managing VPCs
-- Using CloudFront for content delivery
+- Cloud Iterations Overview
+- Amazon Simple Queue Service (SQS)
+- Hands-On: Amazon SQS Standard Queue
 
-### Day 2: Security and Identity
+### Day 2: Sections 13, 14, and 15
 
-- Overview of IAM
-- Managing users and permissions
-- Using AWS security tools and best practices
+- Security and Compliance
+- DDoS Protection on AWS
+- Hands-On: Exploring AWS Key Management Service
 
-### Day 3: Monitoring and Management
+### Day 3: Sections 16 and 17
 
-- Introduction to CloudWatch
-- Setting up monitoring and alerts
-- Using CloudTrail for logging and auditing
+- AWS STS (Security Token Service) Overview
+- Amazon Cognito Overview
+- AWS Directory Services Overview
 
-### Day 4: Cost Management and Optimization
+### Day 4: Section 18
 
-- Understanding AWS pricing models
-- Using the AWS Cost Management tools
-- Best practices for cost optimization
+- AWS Architecting & Ecosystem - Well-Architected Framework Overview
+- Operational Excellence - AWS Well-Architected Framework
+- Security - AWS Well-Architected Framework
 
-### Day 5: Review and Practice
+### Day 5: Section 19 and Review
 
-- Hands-on labs with AWS services
-- Q&A and troubleshooting
+- Test Tasking Tips: Review of AWS
+- Exam Prep
 
 ## Week 6: Build a Full-Stack App (Capstone)
 

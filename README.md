@@ -7,18 +7,20 @@
 - Overview of Express.js and its benefits
 - Setting up an Express project
 - Basic routing in Express
+- Introduction to Nodemon for auto-restarting the server
 
-### Day 2: Middleware in Express
-
-- Understanding middleware
-- Creating and using custom middleware
-- Using third-party middleware
-
-### Day 3: Handling Requests and Responses
+### Day 2: Handling Requests and Responses
 
 - Parsing incoming request bodies
 - Sending responses
 - Working with query parameters and URL parameters
+- Introduction to Thunder Client or Postman for testing APIs
+
+### Day 3: Middleware in Express
+
+- Understanding middleware
+- Creating and using custom middleware
+- Using third-party middleware
 
 ### Day 4: Express Router and Modularizing Routes
 
@@ -45,18 +47,20 @@
 - Creating Mongoose schemas
 - Defining and using models
 - CRUD operations with Mongoose
+- Finding information in the Mongoose documentation
 
-### Day 3: Advanced Mongoose Queries
+### Day 3: Advanced Mongoose Queries and Authentication
 
 - Querying documents
 - Updating and deleting documents
 - Using Mongoose middleware and virtuals
+- Introduction to user authentication with password hashing
 
-### Day 4: Relationships and Data Modeling
+### Day 4: Maintaining Sessions and Role-Based Access Control (RBAC)
 
-- One-to-one, one-to-many, and many-to-many relationships
-- Population in Mongoose
-- Data validation and constraints
+- Protecting routes with middleware
+- Implementing role-based access control
+- Managing sessions with JWT tokens
 
 ### Day 5: Review and Practice
 

@@ -107,16 +107,16 @@ Which of the following statements is TRUE?
 
 Which principle should you apply regarding IAM Permissions?
 
-- A) Grant most privilege
+- A) Grant most privilege  
   Incorrect: Granting the most privilege goes against security best practices.
 
-- B) Grant least privilege
+- B) Grant least privilege  
   Correct: The principle of least privilege means granting only the permissions needed to perform a task.
 
-- C) Grant permissions if your employee asks you to
+- C) Grant permissions if your employee asks you to  
   Incorrect: Permissions should be granted based on the principle of least privilege, not just on request.
 
-- D) Restrict root account permissions
+- D) Restrict root account permissions  
   Incorrect: The root account should not be used for everyday tasks, so this is not a principle for regular IAM permissions.
 
 ## Question 9:

@@ -1,200 +1,285 @@
-# Day-1 Quiz 1
+---
+layout: posts
+title: 'Day-1 Quiz-1'
+section: Section-1
+lesson: 1
+---
 
 ## Question 1:
 
-You ONLY want to manage Applications and Data. Which type of Cloud Computing model should you use?
+Which infrastructure component consists of one or more data centers with redundant power, networking, and connectivity used for deployment?
 
-- A) On-premises  
-  Incorrect: In the on-premises model, you manage everything from networking to applications.
+- A) Edge Locations
 
-- B) Infrastructure as a Service (IaaS)  
-  Incorrect: In the Infrastructure as a Service model, you manage the operating system, the middleware, the runtime, the data and the applications.
+  - Incorrect: Edge Locations are used for caching content and delivering it with lower latency.
 
-- C) Software as a Service (SaaS)  
-  Incorrect: In the Software as a Service model, everything is managed by 3rd-party.
+- B) Availability Zones
 
-- D) Platform as a Service (PaaS)  
-  Correct: In the Platform as a Service model, you only manage the data and the applications.
+  - Correct: Availability Zones consist of data centers with redundant power, networking, and connectivity.
+
+- C) Regions
+  - Incorrect: Regions are composed of multiple Availability Zones.
+  <!-- pagebreak -->
 
 ## Question 2:
 
-What is the pricing model of Cloud Computing?
+What defines the distribution of security responsibilities in the AWS Cloud?
 
-- A) Discounts over time  
-  Incorrect: This is not the pricing model of Cloud Computing.
+- A) AWS Pricing Fundamentals
 
-- B) Pay-as-you-go pricing  
-  Correct: In Cloud Computing, you are only charged for what you use.
+  - Incorrect: Pricing fundamentals describe the cost structure, not security responsibilities.
 
-- C) Pay once a year  
-  Incorrect: This is not the pricing model of Cloud Computing.
+- B) The Shared Responsibility Model
 
-- D) Flat-rate pricing  
-  Incorrect: This is not the pricing model of Cloud Computing.
+  - Correct: This model outlines security responsibilities for AWS and its customers.
+
+- C) AWS Acceptable Use Policy
+
+  - Incorrect: This policy describes prohibited uses of AWS services.
+
+- D) The AWS Management Console
+  - Incorrect: The console is a tool for managing AWS services.
+  <!-- pagebreak -->
 
 ## Question 3:
 
-Which Global Infrastructure identity is composed of one or more discrete data centers with redundant power, networking, and connectivity, and are used to deploy infrastructure?
+Which of the following is NOT an advantage of Cloud Computing?
 
-- A) Edge Locations  
-  Incorrect: Edge Locations are caching sites to deliver content to end users with lower latency. They are located in Availability Zones. They are not used to deploy infrastructure, but for caching content.
+- A) Trade capital expense (CAPEX) for operational expense (OPEX)
 
-- B) Availability Zones  
-  Correct: This is the definition of Availability Zones.
+  - Incorrect: This is a significant advantage of Cloud Computing.
 
-- C) Regions  
-  Incorrect: AWS Regions are a cluster of data centers, and are geographical constructs composed of two or more Availability Zones.
+- B) Reduce training requirements for employees
+
+  - Correct: Employees often need additional training to effectively use cloud services.
+
+- C) Global deployment in minutes
+
+  - Incorrect: Rapid global deployment is a key advantage of Cloud Computing.
+
+- D) Eliminate costs of running and maintaining data centers
+  - Incorrect: This is a major benefit of Cloud Computing.
+  <!-- pagebreak -->
 
 ## Question 4:
 
-Which of the following is NOT one of the Five Characteristics of Cloud Computing?
+AWS Regions consist of?
 
-- A) Rapid elasticity and scalability  
-  Incorrect: This is one of the Five Characteristics of Cloud Computing. You quickly acquire resources as you need them and release resources when you no longer need them. You also scale quickly based on demand.
+- A) Two or more Edge Locations
 
-- B) Multi-tenancy and resource pooling  
-  Incorrect: This is one of the Five Characteristics of Cloud Computing. Cloud Computing supports a multi-tenant model, and multiple customers are serviced from the same physical resources.
+  - Incorrect: Edge Locations are for content delivery, not regional structure.
 
-- C) Dedicated Support Agent to help you deploy applications  
-  Correct: This is not one of the Five Characteristics of Cloud Computing. In the cloud, everything is self-service.
+- B) One or more discrete data centers
 
-- D) On-demand self service  
-  Incorrect: This is one of the Five Characteristics of Cloud Computing. You can provision and use Cloud Computing resources without the need of human interaction from the service provider.
+  - Incorrect: This describes Availability Zones, not Regions.
+
+- C) Three or more Availability Zones
+  - Correct: AWS Regions include multiple, isolated Availability Zones.
+  <!-- pagebreak -->
 
 ## Question 5:
 
-Which are the 3 pricing fundamentals of the AWS Cloud?
+Which of the following is NOT a core characteristic of Cloud Computing?
 
-- A) Compute, Storage, and Data transfer in the AWS Cloud  
-  Incorrect: Data transfer in the AWS Cloud is free.
+- A) Rapid elasticity and scalability
 
-- B) Compute, Networking, and Data transfer out of the AWS Cloud  
-  Incorrect: Networking is not a pricing fundamental of the AWS Cloud.
+  - Incorrect: This is a core characteristic, allowing quick scaling of resources.
 
-- C) Compute, Storage, and Data transfer out of the AWS Cloud  
-  Correct: Compute, Storage, and data transfer out of the AWS Cloud are the 3 pricing fundamentals of the AWS Cloud.
+- B) Multi-tenancy and resource pooling
 
-- D) Storage, Functions, and Data transfer in the AWS Cloud  
-  Incorrect: Storage, Functions and data transfer in the AWS Cloud are not pricing fundamentals of the AWS Cloud.
+  - Incorrect: This is a core characteristic, enabling multiple customers to share resources.
+
+- C) Dedicated support agent for deployments
+
+  - Correct: Cloud Computing typically offers self-service without dedicated support agents.
+
+- D) On-demand self-service
+  - Incorrect: This is a core characteristic, allowing users to provision resources without human intervention.
+  <!-- pagebreak -->
 
 ## Question 6:
 
-Which of the following options is NOT a point of consideration when choosing an AWS Region?
+Which of the following services has a global scope?
 
-- A) Compliance with data governance  
-  Incorrect: Compliance with data governance and legal requirements should be considered when choosing an AWS Region. You might have location-specific data regulations.
+- A) EC2
 
-- B) Latency  
-  Incorrect: Proximity to customers (and therefore reduced latency) should be considered when choosing an AWS Region. You want to be as close as possible to your end users.
+  - Incorrect: EC2 operates within specific regions.
 
-- C) Capacity availability  
-  Correct: Capacity is unlimited in the cloud, you do not need to worry about it. The 4 points of considerations when choosing an AWS Region are: compliance with data governance and legal requirements, proximity to customers, available services and features within a Region, and pricing.
+- B) IAM
 
-- D) Pricing  
-  Incorrect: Pricing should be considered when choosing an AWS Region. It is transparent and varies from region to region. You might consider deploying your application in a Region with lower pricing.
+  - Correct: IAM is a global service affecting all regions.
+
+- C) Lambda
+
+  - Incorrect: Lambda functions are regional.
+
+- D) Rekognition
+  - Incorrect: Rekognition is a regional service.
+  <!-- pagebreak -->
 
 ## Question 7:
 
-Which of the following is NOT an advantage of Cloud Computing?
+Which three elements are the pricing fundamentals of AWS Cloud?
 
-- A) Trade capital expense (CAPEX) for operational expense (OPEX)  
-  Incorrect: This is an advantage of Cloud Computing. With Cloud Computing you pay on-demand and benefit from reduced Total Cost of Ownership and Operational Expense (OPEX).
+- A) Compute, Storage, and Data transfer in the AWS Cloud
 
-- B) Train your employees less  
-  Correct: You must train your employees more so they can use the cloud effectively.
+  - Incorrect: Data transfer in the AWS Cloud is not free.
 
-- C) Go global in minutes  
-  Incorrect: This is an advantage of Cloud Computing.
+- B) Compute, Networking, and Data transfer out of the AWS Cloud
 
-- D) Stop spending money running and maintaining data centers  
-  Incorrect: This is an advantage of Cloud Computing.
+  - Incorrect: Networking is not a primary pricing element.
+
+- C) Compute, Storage, and Data transfer out of the AWS Cloud
+
+  - Correct: These are the three primary pricing fundamentals of AWS Cloud.
+
+- D) Storage, Functions, and Data transfer in the AWS Cloud
+  - Incorrect: These are not the primary pricing fundamentals.
+  <!-- pagebreak -->
 
 ## Question 8:
 
-AWS Regions are composed of?
+Which of the following defines Cloud Computing?
 
-- A) Two or more Edge Locations  
-  Incorrect: Edge Locations are used to distribute content closer to users.
+- A) Rapidly develop, test, and launch software applications
 
-- B) One or more discrete data centers  
-  Incorrect: Availability Zones are composed of one or more discrete data centers.
+  - Incorrect: This describes agility, not Cloud Computing.
 
-- C) Three or more Availability Zones  
-  Correct: AWS Regions consist of multiple, isolated, and physically separate Availability Zones within a geographic area.
+- B) Automatic and quick ability to acquire and release resources
+
+  - Incorrect: This describes elasticity, not Cloud Computing.
+
+- C) On-demand availability of computing resources without direct management by the user
+
+  - Correct: This is the definition of Cloud Computing.
+
+- D) Changing resource types when needed
+  - Incorrect: This describes flexibility, not Cloud Computing.
+  <!-- pagebreak -->
 
 ## Question 9:
 
-Which of the following services has a global scope?
+What is the common pricing strategy for Cloud Computing?
 
-- A) EC2  
-  Incorrect: EC2 is a regional service.
+- A) Long-term discounts
 
-- B) IAM  
-  Correct: IAM is a global service (encompasses all regions).
+  - Incorrect: This is not a typical pricing strategy for Cloud Computing.
 
-- C) Lambda  
-  Incorrect: Lambda is a regional service.
+- B) Pay-as-you-go pricing
 
-- D) Rekognition  
-  Incorrect: Rekognition is a regional service.
+  - Correct: Cloud Computing charges you based on usage.
+
+- C) Annual payment plans
+
+  - Incorrect: This is not a common pricing strategy for Cloud Computing.
+
+- D) Fixed monthly pricing
+  - Incorrect: Fixed monthly pricing is not the typical model for Cloud Computing.
+  <!-- pagebreak -->
 
 ## Question 10:
 
-Which of the following is the definition of Cloud Computing?
+Which is NOT a key factor when selecting an AWS Region?
 
-- A) Rapidly develop, test and launch software applications  
-  Incorrect: This is the definition of Agility, not Cloud Computing.
+- A) Compliance with data governance
 
-- B) Automatic and quick ability to acquire resources as you need them and release resources when you no longer need them  
-  Incorrect: This is the definition of Elasticity, not Cloud Computing.
+  - Incorrect: Data governance compliance is essential when selecting a region.
 
-- C) On-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user  
-  Correct: This is the definition of Cloud Computing.
+- B) Latency
 
-- D) Change resource types when needed  
-  Incorrect: This is the definition of Flexibility, not Cloud Computing.
+  - Incorrect: Low latency to customers is a key factor in region selection.
+
+- C) Capacity availability
+
+  - Correct: Capacity is not a concern as it is generally considered unlimited in the cloud.
+
+- D) Pricing
+  - Incorrect: Pricing differences across regions are a crucial consideration.
+  <!-- pagebreak -->
 
 ## Question 11:
 
-What defines the distribution of responsibilities for security in the AWS Cloud?
+A company wants to utilize the Public Cloud's benefits while keeping sensitive data on-premises. Which deployment model should they use?
 
-- A) AWS Pricing Fundamentals  
-  Incorrect: The AWS Pricing Fundamentals describe the 3 fundamentals of the pay-as-you-go pricing model in AWS.
+- A) Private Cloud
 
-- B) The Shared Responsibility Model  
-  Correct: The Shared Responsibility Model defines who is responsible for what in the AWS Cloud.
+  - Incorrect: Private Cloud does not leverage Public Cloud benefits.
 
-- C) AWS Acceptable Use Policy  
-  Incorrect: The AWS Acceptable Use Policy describes prohibited uses of the web services offered by AWS.
+- B) Public Cloud
 
-- D) The AWS Management Console  
-  Incorrect: The AWS Management Console allows you to manage services in AWS.
+  - Incorrect: Public Cloud does not keep sensitive data on-premises.
+
+- C) Hybrid Cloud
+  - Correct: Hybrid Cloud combines public and private clouds for flexibility and security.
+  <!-- pagebreak -->
 
 ## Question 12:
 
-A company would like to benefit from the advantages of the Public Cloud but would like to keep sensitive assets in its own infrastructure. Which deployment model should the company use?
+You want to focus solely on managing Applications and Data. Which cloud computing model fits your needs?
 
-- A) Private Cloud  
-  Incorrect: Using only the Private Cloud does not allow you to benefit from the advantages of the Public Cloud.
+- A) On-premises
 
-- B) Public Cloud  
-  Incorrect: Using only the Public Cloud does not allow you to keep your sensitives assets in your own infrastructure.
+  - Incorrect: On-premises requires you to manage everything from networking to applications.
 
-- C) Hybrid Cloud  
-  Correct: Using a Hybrid Cloud deployment model allows you to benefit from the flexibility, scalability and on-demand storage access while keeping security and performance of your own infrastructure.
+- B) Infrastructure as a Service (IaaS)
+
+  - Incorrect: With IaaS, you manage the OS, middleware, runtime, data, and applications.
+
+- C) Software as a Service (SaaS)
+
+  - Incorrect: SaaS is fully managed by a third party.
+
+- D) Platform as a Service (PaaS)
+  - Correct: PaaS allows you to manage only the data and applications.
+  <!-- pagebreak -->
 
 ## Question 13:
 
-What is NOT authorized to do on AWS according to the AWS Acceptable Use Policy?
+What is NOT allowed on AWS according to the AWS Acceptable Use Policy?
 
-- A) Building a gaming application  
-  Incorrect: You can build gaming applications on AWS, it's one of the common use cases.
+- A) Building a gaming application
 
-- B) Deploying a website  
-  Incorrect: You can deploy a website on AWS, it's one of the common use cases.
+  - Incorrect: Building gaming applications is a valid use of AWS.
 
-- C) Run analytics on stolen content  
-  Correct: You can run analytics on AWS, but you cannot run analytics on fraudulent content. Refer to the AWS Acceptable Use Policy to see what is not authorized to do on AWS.
+- B) Deploying a website
 
-- D) Backup your data  
-  Incorrect: You can backup your data on AWS, it's one of the common use cases.
+  - Incorrect: Websites can be deployed on AWS.
+
+- C) Running analytics on stolen content
+
+  - Correct: AWS does not permit running analytics on illegally obtained content.
+
+- D) Backing up your data
+  - Incorrect: Data backup is a common use of AWS.
+  <!-- pagebreak -->
+
+## Question 14:
+
+Which cloud deployment model allows for both private infrastructure and public cloud services?
+
+- A) Private Cloud
+
+  - Incorrect: Private Cloud is only for private infrastructure.
+
+- B) Public Cloud
+
+  - Incorrect: Public Cloud is only for public cloud services.
+
+- C) Hybrid Cloud
+  - Correct: Hybrid Cloud integrates private infrastructure with public cloud services.
+  <!-- pagebreak -->
+
+## Question 15:
+
+Which AWS service is designed to help deploy, manage, and scale containerized applications?
+
+- A) AWS Lambda
+
+  - Incorrect: AWS Lambda is for serverless computing, not container management.
+
+- B) Amazon RDS
+
+  - Incorrect: Amazon RDS is for relational databases, not containers.
+
+- C) Amazon ECS
+  - Correct: Amazon ECS is designed for container management and deployment.

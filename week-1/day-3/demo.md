@@ -34,6 +34,69 @@ Install Express:
 npm install express
 ```
 
+Create a sample data file and share with the students:
+
+```json
+// data.json
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "role": "admin",
+    "profile": {
+      "age": 30,
+      "location": "New York",
+      "interests": ["coding", "hiking", "reading"]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "role": "user",
+    "profile": {
+      "age": 25,
+      "location": "San Francisco",
+      "interests": ["traveling", "music", "sports"]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Sam Johnson",
+    "email": "sam.johnson@example.com",
+    "role": "moderator",
+    "profile": {
+      "age": 28,
+      "location": "Chicago",
+      "interests": ["gaming", "movies", "technology"]
+    }
+  },
+  {
+    "id": 4,
+    "name": "Alice Brown",
+    "email": "alice.brown@example.com",
+    "role": "user",
+    "profile": {
+      "age": 22,
+      "location": "Austin",
+      "interests": ["art", "photography", "yoga"]
+    }
+  },
+  {
+    "id": 5,
+    "name": "Michael Green",
+    "email": "michael.green@example.com",
+    "role": "user",
+    "profile": {
+      "age": 35,
+      "location": "Seattle",
+      "interests": ["cooking", "gardening", "cycling"]
+    }
+  }
+]
+```
+
 ### Step 2: Create the Server
 
 Create a file named `index.js` and set up a basic Express server:

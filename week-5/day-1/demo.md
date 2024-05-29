@@ -23,6 +23,7 @@ This week, we continue our AWS Practitioner material. Today, we will focus on cl
 ## Instructions
 
 Open the slides to Sections 10, 11, and 12. We will cover:
+(13,14,15)
 
 - Cloud Iterations Overview
 - Amazon Simple Queue Service (SQS)

@@ -23,6 +23,7 @@ Today, we will cover various AWS services including Docker, ECS, ECR, serverless
 ## Instructions
 
 Open the slides to Sections 7, 8, and 9. We will cover:
+(10,11,12)
 
 - Introduction to Docker
 - Understanding ECS, Fargate, and ECR

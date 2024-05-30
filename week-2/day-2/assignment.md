@@ -64,8 +64,14 @@
      - URL: `http://localhost:3000/users`
 
    - **Get Active Users**:
+
      - Method: GET
      - URL: `http://localhost:3000/users/active`
+
+   - **Take Screenshots**:
+     - Screenshot of POST request to create a user.
+     - Screenshot of GET request to retrieve all users.
+     - Screenshot of GET request to retrieve active users.
 
 ### Part 5: Update and Delete Users
 
@@ -103,19 +109,26 @@
      - URL: `http://localhost:3000/users/<user-id>/deactivate`
 
    - **Delete a User**:
+
      - Method: DELETE
      - URL: `http://localhost:3000/users/<user-id>`
+
+   - **Take Screenshots**:
+     - Screenshot of PUT request to update a user.
+     - Screenshot of PUT request to deactivate a user.
+     - Screenshot of DELETE request to delete a user.
 
 ## Submission
 
 - **GitHub Repository**: Create a new repository named `express-mongodb-advanced`. Push your project to the repository and submit the URL. Ensure it includes all necessary files to run the server, including the `README.md`.
+- **Screenshots**: Include the screenshots of your POST, GET, PUT, and DELETE requests in the `README.md`.
 
 ## Rubric
 
-| Criteria                 | Limited (0 pts)                          | Partial (3 pts)                                | Complete (5 pts)                                  |
-| ------------------------ | ---------------------------------------- | ---------------------------------------------- | ------------------------------------------------- |
-| **Project Setup**        | Significant setup issues                 | Minor issues in setup                          | Project set up correctly with required packages   |
-| **Schema and Model**     | Schema and model not defined             | Schema and model defined with minor issues     | Schema and model defined correctly                |
-| **Route Implementation** | Significant issues or routes not working | Minor issues in route implementation           | All routes are correctly implemented and working  |
-| **CRUD Operations**      | CRUD operations not working              | CRUD operations working with minor issues      | CRUD operations working correctly                 |
-| **Code Quality**         | Significant issues in code quality       | Minor issues in code organization or practices | Code is well-organized and follows best practices |
+| Criteria                 | Limited (0 pts)                          | Partial (3 pts)                            | Complete (5 pts)                                              |
+| ------------------------ | ---------------------------------------- | ------------------------------------------ | ------------------------------------------------------------- |
+| **Project Setup**        | Significant setup issues                 | Minor issues in setup                      | Project set up correctly with required packages               |
+| **Schema and Model**     | Schema and model not defined             | Schema and model defined with minor issues | Schema and model defined correctly                            |
+| **Route Implementation** | Significant issues or routes not working | Minor issues in route implementation       | All routes are correctly implemented and working              |
+| **CRUD Operations**      | CRUD operations not working              | CRUD operations working with minor issues  | CRUD operations working correctly                             |
+| **Screenshots**          | Screenshots not provided or incomplete   | Some screenshots provided                  | All required screenshots provided and included in `README.md` |

@@ -1,26 +1,44 @@
-# Day 2: Sections 2 and 3
+# Day 2: Sections 3 and 4
 
 ## Introduction
 
-Today, we will cover AWS EC2 and EBS. We will discuss Elastic Compute Cloud, security groups, and hands-on activities with EC2 instances and EBS volumes.
+Today, we will discuss AWS EC2, Elastic Compute Cloud, and Amazon Elastic Block Store (EBS).
 
 ## Steps
 
-1. **Understanding AWS EC2**
+### Section 3
 
-   - Overview of EC2 instances, security groups, and instance types.
-   - Hands-on activities: Setting up and connecting to EC2 instances.
+1. **Understanding AWS EC2 - Elastic Compute Cloud**
 
-2. **Amazon Elastic Block Store (EBS)**
+   - Overview of EC2 instances.
+   - Hands-on: SSH into EC2 and view IAM users.
+
+2. **Introduction to Security Groups in AWS EC2**
+   - Overview of security groups.
+   - Hands-on: Configuring security groups.
+
+### Section 4
+
+1. **Understanding Amazon Elastic Block Store (EBS)**
+
    - Overview of EBS volumes and snapshots.
-   - Hands-on activities: Creating and managing EBS volumes.
+   - Hands-on: Creating and managing EBS volumes.
+
+2. **Amazon Machine Image (AMI) Overview**
+   - Introduction to AMIs.
+   - Hands-on: Creating and using an Amazon Machine Image (AMI).
 
 ## Instructions
 
-Open the slides to Sections 2 and 3. We will cover:
+Open the slides to Sections 3 and 4. We will cover:
 
 - Understanding AWS EC2 - Elastic Compute Cloud
+- Hands-On: SSH into EC2 and View IAM Users
 - Introduction to Security Groups in AWS EC2
-- Hands-On: Setting Up an EC2 Instance
+- Hands-On: Configuring Security Groups
 - Understanding Amazon Elastic Block Store (EBS)
 - Hands-On: Creating and Attaching a Second EBS Volume
+- Amazon Machine Image (AMI) Overview
+- Hands-On: Creating and Using an Amazon Machine Image (AMI)
+
+Complete 4 quizzes by the end of the day.

@@ -1,32 +1,44 @@
-# Day 2: Sections 13, 14, and 15
+# Day 7: Sections 13 and 14
 
 ## Introduction
 
-Today, we will focus on security and compliance, machine learning services, and AWS Organizations.
+Today, we will discuss AWS VPC and security and compliance in AWS.
 
 ## Steps
 
-1. **Security and Compliance**
+### Section 13
 
-   - Overview of AWS security services and best practices.
-   - Hands-on activities: Exploring AWS Key Management Service and GuardDuty.
+1. **VPC - Virtual Private Cloud Overview**
 
-2. **Machine Learning Services**
+   - Introduction to VPC and subnets.
+   - Hands-on: Understanding CIDR notation.
 
-   - Introduction to AWS machine learning services like Rekognition, Transcribe, and SageMaker.
-   - Hands-on activities: Using Amazon Rekognition and Polly.
+2. **Network ACLs & Security Groups in AWS**
+   - Overview of VPC flow logs and peering connections.
+   - Hands-on: Configuring security groups and network ACLs.
 
-3. **AWS Organizations**
-   - Understanding AWS Organizations and consolidated billing.
-   - Hands-on activities: Setting up AWS Organizations and SCPs.
+### Section 14
+
+1. **Security and Compliance: Understanding AWS Shared Responsibility Model**
+
+   - Overview of DDoS protection, AWS Shield, and WAF.
+   - Hands-on: Exploring AWS Key Management Service.
+
+2. **Encryption Practices in AWS**
+   - Introduction to AWS CloudHSM and KMS keys.
+   - Hands-on: Exploring AWS KMS.
 
 ## Instructions
 
-Open the slides to Sections 13, 14, and 15. We will cover:
+Open the slides to Sections 13 and 14. We will cover:
 
-- Security and Compliance
+- VPC - Virtual Private Cloud Overview
+- Hands-On: Understanding CIDR Notation
+- Network ACLs & Security Groups in AWS
+- Hands-On: Exploring Security Groups and Network ACLs
+- Security and Compliance: Understanding AWS Shared Responsibility Model
 - Hands-On: Exploring AWS Key Management Service
-- Introduction to AWS Rekognition
-- Introduction to Amazon Transcribe
-- Introduction to AWS Organizations
-- Hands-On: AWS Organization and SCPs
+- Encryption Practices in AWS
+- Hands-On: Exploring AWS KMS
+
+Complete 4 quizzes by the end of the day.

@@ -1,22 +1,32 @@
-# Day 5: Section 19 and Review
+# Day 10: Sections 19
 
 ## Introduction
 
-Today, we will review all the AWS Practitioner material covered in Weeks 4 and 5. We will also prepare for the AWS exam with tips and practice questions.
+Today, we will discuss AWS architecting and the Well-Architected Framework, followed by a material review.
 
 ## Steps
 
-1. **Review of All Sections**
+### Section 19
 
-   - Go over the key points from each section covered in Weeks 4 and 5.
+1. **AWS Architecting & Ecosystem - Well-Architected Framework Overview**
 
-2. **Exam Preparation**
-   - Test-taking tips and strategies for the AWS Practitioner exam.
-   - Practice questions and mock tests.
+   - Overview of the Well-Architected Framework pillars.
+   - Hands-on: Using the AWS Well-Architected Tool.
+
+2. **AWS Cloud Adoption Framework (CAF)**
+   - Overview of AWS CAF transformation domains and phases.
+   - Exam tips for AWS certification.
 
 ## Instructions
 
-Open the slides to Section 19. We will cover:
+Open the slides to Sections 19 and 20. We will cover:
 
-- Test Tasking Tips: Review of AWS
-- Exam Prep
+- AWS Architecting & Ecosystem - Well-Architected Framework Overview
+- Hands-On: AWS Well-Architected Tool
+- AWS Cloud Adoption Framework (CAF)
+- Hands-On: Exploring AWS CAF
+- Material Review
+- Q&A Session
+- Additional Hands-On Practice
+
+Complete 2 quizzes by the end of the day.

@@ -1,33 +1,48 @@
-# Day 1: Sections 10, 11, and 12
+# Day 6: Sections 11 and 12
 
 ## Introduction
 
-This week, we continue our AWS Practitioner material. Today, we will focus on cloud iterations, CloudWatch, and VPC.
+Today, we will focus on cloud iterations and monitoring and management tools in AWS.
 
 ## Steps
 
+### Section 11
+
 1. **Cloud Iterations Overview**
 
-   - Overview of SQS, SNS, and Kinesis.
-   - Hands-on activities: Working with SQS and SNS.
+   - Introduction to Amazon SQS and Amazon Kinesis.
+   - Hands-on: Setting up Amazon SQS standard queue.
 
-2. **Monitoring and Management**
+2. **Amazon SNS Overview**
+   - Overview of Amazon MQ and messaging services.
+   - Hands-on: Using Amazon SNS.
 
-   - Introduction to CloudWatch metrics, logs, and alarms.
-   - Hands-on activities: Setting up CloudWatch alarms and logs.
+### Section 12
 
-3. **VPC Overview**
-   - Understanding VPC, subnets, and security groups.
-   - Hands-on activities: Configuring VPC and security groups.
+1. **CloudWatch Metrics & Alarms**
+
+   - Overview of CloudWatch features.
+   - Hands-on: Creating and reviewing CloudWatch metrics and alarms.
+
+2. **Amazon CloudWatch Logs**
+   - Introduction to CloudTrail, X-Ray, and AWS Health Dashboards.
+   - Hands-on: Using CloudWatch Logs with AWS Lambda.
 
 ## Instructions
 
-Open the slides to Sections 10, 11, and 12. We will cover:
-(13,14,15)
+Open the slides to Sections 11 and 12. We will cover:
 
 - Cloud Iterations Overview
-- Amazon Simple Queue Service (SQS)
 - Hands-On: Amazon SQS Standard Queue
+- Amazon Kinesis Overview
+- Amazon SNS Overview
+- Hands-On: Using Amazon SNS
 - CloudWatch Metrics & Alarms
 - Hands-On: CloudWatch Metrics and Alarms
-- VPC - Virtual Private Cloud Overview
+- Amazon CloudWatch Logs
+- Hands-On: Using CloudWatch Logs with AWS Lambda
+- CloudTrail Overview
+- X-Ray Overview
+- AWS Health Dashboards Overview
+
+Complete 4 quizzes by the end of the day.

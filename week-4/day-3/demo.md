@@ -1,25 +1,43 @@
-# Day 3: Sections 4 and 5
+# Day 3: Sections 5 and 6
 
 ## Introduction
 
-Today, we will discuss high availability, scaling, and Amazon S3. We will learn about load balancers, auto-scaling, and the basics of Amazon S3.
+Today, we will cover high availability and scaling, along with the AWS Snow Family.
 
 ## Steps
 
-1. **High Availability and Scaling**
+### Section 5
+
+1. **Understanding High Availability, Horizontal Scaling, and Vertical Scaling**
 
    - Overview of load balancing and auto-scaling groups.
-   - Hands-on activities: Creating load balancers and auto-scaling groups.
+   - Hands-on: Creating load balancers and auto-scaling groups.
 
-2. **Amazon S3 Overview**
-   - Introduction to S3 buckets, security, and versioning.
-   - Hands-on activities: Working with Amazon S3 buckets.
+2. **Elastic Load Balancing (ELB) and the Four Types of Load Balancers in AWS**
+   - Overview of ELB.
+   - Hands-on: Implementing scaling strategies.
+
+### Section 6
+
+1. **AWS Snow Family Overview**
+
+   - Introduction to Snowball Edge and its pricing.
+   - Overview of hybrid cloud storage solutions.
+
+2. **Amazon Snow Family - Summary**
+   - Review of the Snow Family features and benefits.
 
 ## Instructions
 
-Open the slides to Sections 4 and 5. We will cover:
+Open the slides to Sections 5 and 6. We will cover:
 
-- Elastic Load Balancing (ELB) and Load Balancers
-- Auto Scaling Groups (ASGs) Overview
-- Amazon S3 Overview
-- Hands-On: Working with Amazon S3
+- Understanding High Availability, Horizontal Scaling, and Vertical Scaling
+- Hands-On: Creating Load Balancers and Auto Scaling Groups
+- Elastic Load Balancing (ELB) and the Four Types of Load Balancers in AWS
+- Hands-On: Implementing Scaling Strategies
+- AWS Snow Family Overview
+- Snowball Edge Pricing Overview
+- Hybrid Cloud for Storage
+- Amazon Snow Family - Summary
+
+Complete 4 quizzes by the end of the day.

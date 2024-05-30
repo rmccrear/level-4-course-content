@@ -1,24 +1,45 @@
-# Day 4: Section 18
+# Day 9: Sections 17 and 18
 
 ## Introduction
 
-Today, we will focus on the AWS Well-Architected Framework and the AWS Cloud Adoption Framework.
+Today, we will cover advanced identity services and various other AWS services.
 
 ## Steps
 
-1. **AWS Well-Architected Framework**
+### Section 17
 
-   - Overview of the Well-Architected Framework pillars.
-   - Hands-on activities: Using the AWS Well-Architected Tool.
+1. **AWS STS (Security Token Service) Overview**
 
-2. **AWS Cloud Adoption Framework (CAF)**
-   - Understanding the AWS CAF transformation domains and phases.
-   - Exam tips and best practices.
+   - Introduction to Amazon Cognito and AWS Directory Services.
+   - Overview of AWS IAM Identity Center.
+
+2. **Advanced Identity Services Summary**
+   - Review of advanced identity services.
+   - Hands-on: Exploring AWS IAM Identity Center.
+
+### Section 18
+
+1. **Introduction to Other AWS Services**
+
+   - Overview of Amazon WorkSpaces, AppStream 2.0, and AWS IoT Core.
+   - Hands-on: Using AWS AppSync for real-time data synchronization.
+
+2. **AWS Backup and Disaster Recovery**
+   - Introduction to AWS Backup and disaster recovery strategies.
+   - Hands-on: Implementing AWS Elastic Disaster Recovery.
 
 ## Instructions
 
-Open the slides to Section 18. We will cover:
+Open the slides to Sections 17 and 18. We will cover:
 
-- AWS Architecting & Ecosystem - Well-Architected Framework Overview
-- Hands-On: AWS Well-Architected Tool
-- Understanding the AWS Cloud Adoption Framework (AWS CAF)
+- AWS STS (Security Token Service) Overview
+- Amazon Cognito Overview
+- AWS Directory Services Overview
+- AWS IAM Identity Center Overview
+- Hands-On: Exploring AWS IAM Identity Center
+- Introduction to Other AWS Services
+- Hands-On: Using AWS AppSync
+- AWS Backup and Disaster Recovery
+- Hands-On: Implementing AWS Elastic Disaster Recovery
+
+Complete 4 quizzes by the end of the day.

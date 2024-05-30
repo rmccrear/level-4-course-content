@@ -1,36 +1,46 @@
-# Day 5: Sections 7, 8, and 9
+# Day 5: Sections 9 and 10
 
 ## Introduction
 
-Today, we will cover various AWS services including Docker, ECS, ECR, serverless computing, CloudFormation, and AWS global infrastructure.
+Today, we will cover AWS CloudFormation, the AWS Cloud Development Kit (CDK), and AWS global infrastructure services.
 
 ## Steps
 
-1. **Introduction to Docker and ECS**
+### Section 9
 
-   - Overview of Docker, ECS, and ECR.
-   - Hands-on activities: Working with ECS and ECR.
+1. **CloudFormation Overview**
 
-2. **Serverless Computing and CloudFormation**
+   - Introduction to AWS CloudFormation.
+   - Hands-on: Creating a CloudFormation stack.
 
-   - Understanding AWS Lambda and CloudFormation.
-   - Hands-on activities: Creating serverless functions and CloudFormation templates.
+2. **AWS Cloud Development Kit (CDK) Overview**
+   - Overview of CDK features.
+   - Hands-on: Using CDK for infrastructure as code.
 
-3. **Global Infrastructure**
-   - Overview of AWS global infrastructure, Route 53, and CloudFront.
-   - Hands-on activities: Setting up CloudFront distributions.
+### Section 10
+
+1. **Global Infrastructure - Why Go Global?**
+
+   - Introduction to Route 53 and CloudFront.
+   - Hands-on: Configuring CloudFront for content delivery.
+
+2. **AWS Global Accelerator Overview**
+   - Overview of AWS Outposts, Wavelength, and Local Zones.
+   - Discussion on global applications architecture.
 
 ## Instructions
 
-Open the slides to Sections 7, 8, and 9. We will cover:
-(10,11,12)
+Open the slides to Sections 9 and 10. We will cover:
 
-- Introduction to Docker
-- Understanding ECS, Fargate, and ECR
-- Hands-On: AWS Lambda
 - CloudFormation Overview
 - Hands-On: CloudFormation
+- AWS Cloud Development Kit (CDK) Overview
+- Hands-On: AWS Elastic Beanstalk
 - Global Infrastructure - Why Go Global?
 - Route 53 Overview
-- CloudFront Overview
 - Hands-On: CloudFront
+- AWS Global Accelerator Overview
+- AWS Outposts, Wavelength, and Local Zones
+- Global Applications Architecture
+
+Complete 4 quizzes by the end of the day.

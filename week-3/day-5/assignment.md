@@ -1,18 +1,14 @@
-### Week 3: Building a Backend for a Coffee Shop E-Commerce Site
+# Assignment: Backend - Assignment 5
 
-# Day 5: Finishing the API and Deploying to Render.com
-
-## Overview
-
-In today's session, we will finalize our API by adding any missing features, ensuring it is production-ready, and deploying it to Render.com.
-
-## Day 5 Objectives
+## Objective
 
 - Finalize the API with any remaining features
 - Prepare the API for deployment
 - Deploy the API to Render.com
 
-## Step 1: Finalize the API
+## Instructions
+
+### Step 1: Finalize the API
 
 ### 1. Implement Role-Based Access Control (RBAC)
 
@@ -204,7 +200,7 @@ In today's session, we will finalize our API by adding any missing features, ens
    });
    ```
 
-## Step 2: Deploy to Render.com
+### Step 2: Deploy to Render.com
 
 ### 1. Create a Render.com Account
 
@@ -231,7 +227,7 @@ In today's session, we will finalize our API by adding any missing features, ens
 4. **Deploy**:
    - Click "Create Web Service" to start the deployment.
 
-## Step 3: Test the Deployed API
+### Step 3: Test the Deployed API
 
 1. **Get the URL of Your Deployed API**:
 

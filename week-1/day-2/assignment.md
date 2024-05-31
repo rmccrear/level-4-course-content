@@ -11,9 +11,10 @@ Understand and implement basic HTTP methods (GET and POST) in an Express applica
 1. **Create a New GitHub Repository**:
 
    - Name your repository `express-http-methods`.
-   - Initialize it with a `.gitignore` for Node.js and a README.md.
+   - Initialize it with a `.gitignore` for Node.js and a `README.md`.
 
 2. **Clone Your Repository**:
+   - Clone your repository to your local machine.
    - Navigate to the cloned repository's directory to begin your project setup.
 
 ### Part 2: Setup and Configuration
@@ -68,32 +69,10 @@ Understand and implement basic HTTP methods (GET and POST) in an Express applica
 
 ## Rubric
 
-### Setup and Basic Routing
-
-- **Complete (5 pts)**: Express app setup with basic routes.
-- **Partial (3 pts)**: Express app setup with incomplete routes.
-- **Limited (0 pts)**: Express app setup incorrectly.
-
-### Handling Different HTTP Methods
-
-- **Complete (5 pts)**: GET and POST methods handled correctly.
-- **Partial (3 pts)**: One of the HTTP methods handled correctly.
-- **Limited (0 pts)**: HTTP methods not handled or incorrect.
-
-### Handling URL Parameters
-
-- **Complete (5 pts)**: URL parameter route works correctly.
-- **Partial (3 pts)**: URL parameter route partially works.
-- **Limited (0 pts)**: URL parameter route does not work.
-
-### Handling Query Parameters
-
-- **Complete (5 pts)**: Query parameter route works correctly.
-- **Partial (3 pts)**: Query parameter route partially works.
-- **Limited (0 pts)**: Query parameter route does not work.
-
-### Submission and GitHub Repo
-
-- **Complete (5 pts)**: Correct repository structure and code.
-- **Partial (3 pts)**: Partially correct repository structure.
-- **Limited (0 pts)**: Incorrect repository structure.
+| Criteria                            | Limited (0 pts)                       | Partial (3 pts)                           | Complete (5 pts)                       |
+| ----------------------------------- | ------------------------------------- | ----------------------------------------- | -------------------------------------- |
+| **Setup and Basic Routing**         | Express app setup incorrectly         | Express app setup with incomplete routes  | Express app setup with basic routes    |
+| **Handling Different HTTP Methods** | HTTP methods not handled or incorrect | One of the HTTP methods handled correctly | GET and POST methods handled correctly |
+| **Handling URL Parameters**         | URL parameter route does not work     | URL parameter route partially works       | URL parameter route works correctly    |
+| **Handling Query Parameters**       | Query parameter route does not work   | Query parameter route partially works     | Query parameter route works correctly  |
+| **Submission and GitHub Repo**      | Incorrect repository structure        | Partially correct repository structure    | Correct repository structure and code  |

@@ -1,18 +1,14 @@
-### Week 3: Building a Backend for a Coffee Shop E-Commerce Site
+# Assignment: Backend - Assignment 4
 
-# Day 4: Advanced Features
-
-## Overview
-
-In today's session, we will add advanced features to our API, such as pagination, sorting, and filtering. These features will improve the usability and performance of our e-commerce backend.
-
-## Day 4 Objectives
+## Objective
 
 - Implement pagination for product listings
 - Add sorting and filtering capabilities
 - Handle file uploads for product images
 
-## Step 1: Implement Pagination for Product Listings
+## Instructions
+
+### Step 1: Implement Pagination for Product Listings
 
 1. **Update Product Routes to Include Pagination**:
 
@@ -102,7 +98,7 @@ In today's session, we will add advanced features to our API, such as pagination
    module.exports = router;
    ```
 
-## Step 2: Handle File Uploads for Product Images
+### Step 2: Handle File Uploads for Product Images
 
 1. **Install Multer for File Uploads**:
 
@@ -257,7 +253,7 @@ In today's session, we will add advanced features to our API, such as pagination
    module.exports = router;
    ```
 
-## Step 3: Integrate File Upload Middleware with the Server
+### Step 3: Integrate File Upload Middleware with the Server
 
 1. **Update Server Setup**:
 
@@ -306,7 +302,7 @@ In today's session, we will add advanced features to our API, such as pagination
    });
    ```
 
-## Step 4: Test the API
+### Step 4: Test the API
 
 1. **Start Your Server**:
 

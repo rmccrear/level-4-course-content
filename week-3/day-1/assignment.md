@@ -1,4 +1,4 @@
-# Assignment: Coffee Shop Backend - Assignment 1
+# Assignment: Backend - Assignment 1
 
 ## Objective
 

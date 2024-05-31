@@ -1,19 +1,15 @@
-### Week 3: Building a Backend for a Coffee Shop E-Commerce Site
+# Assignment: Backend - Assignment 3
 
-# Day 3: Building RESTful APIs
-
-## Overview
-
-In today's session, we will build out our RESTful API by adding more endpoints and refining our existing routes. We'll focus on designing RESTful endpoints, implementing CRUD operations for different resources, and handling errors and edge cases.
-
-## Day 3 Objectives
+## Objective
 
 - Add more endpoints to the API
 - Implement CRUD operations for users
 - Refine product endpoints
 - Handle errors and edge cases
 
-## Step 1: Add More Endpoints to the API
+## Instructions
+
+#### Step 1: Add More Endpoints to the API
 
 1. **Update the User Routes**:
 
@@ -131,7 +127,7 @@ In today's session, we will build out our RESTful API by adding more endpoints a
    });
    ```
 
-## Step 2: Refine Product Endpoints
+#### Step 2: Refine Product Endpoints
 
 1. **Add Category Filter to Product Routes**:
 
@@ -210,7 +206,7 @@ In today's session, we will build out our RESTful API by adding more endpoints a
    module.exports = router;
    ```
 
-## Step 3: Handle Errors and Edge Cases
+### Step 3: Handle Errors and Edge Cases
 
 1. **Create Error Handling Middleware**:
 
@@ -267,7 +263,7 @@ In today's session, we will build out our RESTful API by adding more endpoints a
    });
    ```
 
-## Step 4: Test the API
+### Step 4: Test the API
 
 1. **Start Your Server**:
 

@@ -22,7 +22,7 @@ Let's update our Express server to handle these different methods.
 
 ### Step 1: Set Up Routes for Different HTTP Methods
 
-- Follow the steps in yesterdays setup to build a new Express app.
+- Follow the steps in yesterday's setup to build a new Express app.
 
 ```js
 // index.js
@@ -66,7 +66,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
-
+// Normally when we use an API we get back JSON
 app.get('/about', (req, res) => {
   res.json({ message: 'About Us' });
 });
@@ -242,184 +242,101 @@ app.listen(port, () => {
 
 Navigate to `http://localhost:3000/search?term=javascript&sort=asc` in your browser or use Thunder Client/Postman to see the response `{ "message": "Search Term: javascript, Sort By: asc" }`.
 
+## Practical Example with Custom Parameters
+
+Let's include a more practical example where custom parameters are useful. We will set up a route to search for users by their ID and return the user's details in JSON format.
+
+First, let's create a sample dataset:
+
+```json
+const users = [
+  { id: 1, name: 'John Doe', email: 'john@example.com' },
+  { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
+  { id: 3, name: 'Bob Johnson', email: 'bob@example.com' }
+];
+```
+
+Now, modify the `/user/:id` route to search for the user by ID:
+
+```js
+# index.js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+const users = [
+  { id: 1, name: 'John Doe', email: 'john@example.com' },
+  { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
+  { id: 3, name: 'Bob Johnson', email: 'bob@example.com' }
+];
+
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.get('/about', (req, res) => {
+  res.json({ message: 'About Us' });
+});
+
+app.get('/contact', (req, res) => {
+  res.json({ message: 'Contact Us' });
+});
+
+app.post('/contact', (req, res) => {
+  res.json({ message: 'Contact form submitted', data: req.body });
+});
+
+app.put('/contact', (req, res) => {
+  res.json({ message: 'Contact information updated', data: req.body });
+});
+
+app.delete('/contact', (req, res) => {
+  res.json({ message: 'Contact information deleted' });
+});
+
+app.get('/user/:id', (req, res) => {
+  const userId = parseInt(req.params.id, 10);
+  const user = users.find(u => u.id === userId);
+
+  if (user) {
+    res.json(user);
+  } else {
+    res.status(404).json({ error: 'User not found' });
+  }
+});
+
+app.get('/search', (req, res) => {
+  const { term, sort } = req.query;
+  res.json({ message: `Search Term: ${term}, Sort By: ${sort}` });
+});
+
+// Catch-all route for undefined routes
+app.use((req, res) => {
+  res.status(404).json({ error: '404 Not Found' });
+});
+
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+});
+```
+
+### Step 7: Test the Custom Parameter Route
+
+Navigate to `http://localhost:3000/user/1` in your browser or use Thunder Client/Postman to see the user details for the user with ID 1. For example, the response should be:
+
+```json
+{
+  "id": 1,
+  "name": "John Doe",
+  "email": "john@example.com"
+}
+```
+
 ## Conclusion
 
 In this session, we've learned how to handle different HTTP methods and request parameters in Express. We also practiced sending and receiving JSON data and tested our API using Thunder Client or Postman. These skills are crucial for building interactive web applications.
 
 In the next session, we will dive deeper into working with middleware and creating more complex routes.
-
-<!--! Hour 2 -->
-
-In Hour 2, we will explore middleware in Express. Middleware functions are functions that have access to the request object (`req`), the response object (`res`), and the next middleware function in the application’s request-response cycle. These functions can execute any code, make changes to the request and response objects, end the request-response cycle, and call the next middleware function.
-
-## Objectives
-
-- Understand what middleware is and how it works in Express.
-- Learn how to create and use custom middleware.
-- Use third-party middleware to enhance your application.
-
-## What is Middleware?
-
-Middleware functions are a core part of Express applications. They are functions that execute during the lifecycle of a request to the server. Each middleware function can perform specific tasks, such as logging requests, handling authentication, parsing request bodies, and more.
-
-### Step 1: Creating Custom Middleware
-
-Let's start by creating a simple custom middleware function that logs the details of each incoming request.
-
-```js
-// index.js
-const express = require('express');
-const app = express();
-const port = 3000;
-
-// Custom middleware function to log request details
-const requestLogger = (req, res, next) => {
-  console.log(
-    `${req.method} request for '${req.url}' - ${new Date().toISOString()}`,
-  );
-  next(); // Call next() to pass control to the next middleware function
-};
-
-// Use the custom middleware
-app.use(requestLogger);
-
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
-
-app.get('/about', (req, res) => {
-  res.json({ message: 'About Us' });
-});
-
-app.get('/contact', (req, res) => {
-  res.json({ message: 'Contact Us' });
-});
-
-app.post('/contact', (req, res) => {
-  res.json({ message: 'Contact form submitted', data: req.body });
-});
-
-app.put('/contact', (req, res) => {
-  res.json({ message: 'Contact information updated', data: req.body });
-});
-
-app.delete('/contact', (req, res) => {
-  res.json({ message: 'Contact information deleted' });
-});
-
-app.get('/user/:id', (req, res) => {
-  const userId = req.params.id;
-  res.json({ message: `User ID: ${userId}` });
-});
-
-app.get('/search', (req, res) => {
-  const { term, sort } = req.query;
-  res.json({ message: `Search Term: ${term}, Sort By: ${sort}` });
-});
-
-// Catch-all route for undefined routes
-app.use((req, res) => {
-  res.status(404).json({ error: '404 Not Found' });
-});
-
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
-```
-
-### Step 2: Test the Custom Middleware
-
-Start your server using Nodemon:
-
-```bash
-npm run dev
-```
-
-Make a request to any of the routes (e.g., `http://localhost:3000/`). You should see the request details logged in the console.
-
-## Using Third-Party Middleware
-
-Express provides a variety of third-party middleware to handle common tasks. One common middleware is `body-parser`, which helps parse incoming request bodies.
-
-### Step 3: Install and Use `body-parser`
-
-Install `body-parser`:
-
-```bash
-npm install body-parser
-```
-
-Modify `index.js` to use `body-parser`:
-
-```js
-// index.js
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-const port = 3000;
-
-// Custom middleware function to log request details
-const requestLogger = (req, res, next) => {
-  console.log(
-    `${req.method} request for '${req.url}' - ${new Date().toISOString()}`,
-  );
-  next(); // Call next() to pass control to the next middleware function
-};
-
-// Use the custom middleware
-app.use(requestLogger);
-
-// Use body-parser middleware to parse JSON bodies
-app.use(bodyParser.json());
-
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
-
-app.get('/about', (req, res) => {
-  res.json({ message: 'About Us' });
-});
-
-app.get('/contact', (req, res) => {
-  res.json({ message: 'Contact Us' });
-});
-
-app.post('/contact', (req, res) => {
-  res.json({ message: 'Contact form submitted', data: req.body });
-});
-
-app.put('/contact', (req, res) => {
-  res.json({ message: 'Contact information updated', data: req.body });
-});
-
-app.delete('/contact', (req, res) => {
-  res.json({ message: 'Contact information deleted' });
-});
-
-app.get('/user/:id', (req, res) => {
-  const userId = req.params.id;
-  res.json({ message: `User ID: ${userId}` });
-});
-
-app.get('/search', (req, res) => {
-  const { term, sort } = req.query;
-  res.json({ message: `Search Term: ${term}, Sort By: ${sort}` });
-});
-
-// Catch-all route for undefined routes
-app.use((req, res) => {
-  res.status(404).json({ error: '404 Not Found' });
-});
-
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
-```
-
-### Step 4: Test `body-parser`
-
-Use Thunder Client or Postman to send a POST request to `http://localhost:3000/contact` with a JSON body like `{ "name": "John Doe", "email": "john@example.com" }`. You should see the parsed JSON data in the response.
-
-## Conclusion
-
-In this session, we've learned what middleware is and how it works in Express. We created custom middleware to log request details and used third-party middleware (`body-parser`) to parse incoming JSON request bodies. Understanding middleware is crucial for building scalable and maintainable Express applications.

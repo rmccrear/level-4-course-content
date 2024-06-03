@@ -259,7 +259,7 @@ const users = [
 Now, modify the `/user/:id` route to search for the user by ID:
 
 ```js
-# index.js
+// index.js
 const express = require('express');
 const app = express();
 const port = 3000;

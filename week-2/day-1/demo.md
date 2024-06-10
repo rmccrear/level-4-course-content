@@ -47,12 +47,14 @@ MongoDB Atlas is a cloud-based service that makes it easy to set up, operate, an
 ### Step 4: Connect to Your Cluster
 
 1. **Connect**:
+
    - Go to the "Clusters" section.
    - Click on "Connect" for your cluster.
    - Select "Connect Your Application".
    - Choose the "Driver" as "Node.js" and version "3.6 or later".
    - Copy the connection string. It should look something like this:
-     ```
+
+     ```sh
      mongodb+srv://<username>:<password>@cluster0.mongodb.net/test?retryWrites=true&w=majority
      ```
 

@@ -408,7 +408,7 @@ In the previous session, we learned how to hash passwords before storing them in
        if (!user) {
          return res.status(400).json({ error: 'Invalid email or password' });
        }
-       const isMatch = await user.comparePassword(password);
+       const isMatch = await bcrypt.compare(password, user.password);
        if (!isMatch) {
          return res.status(400).json({ error: 'Invalid email or password' });
        }

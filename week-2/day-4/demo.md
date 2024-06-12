@@ -21,33 +21,25 @@ Welcome to Day 4 of Week 2! Today, we will start by setting up a new project to 
 
 2. **Create the Server**:
 
-   ```js
-   // index.js
-   const express = require('express');
-   const mongoose = require('mongoose');
-   const app = express();
-   const port = 3000;
+```js
+// index.js
+const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
+const port = 3000;
 
-   // Middleware to parse JSON bodies
-   app.use(express.json());
+// Middleware to parse JSON bodies
+app.use(express.json());
 
-   // Connect to MongoDB
-   mongoose
-     .connect('your-mongodb-connection-string-here', {
-       useNewUrlParser: true,
-       useUnifiedTopology: true,
-     })
-     .then(() => {
-       console.log('Connected to MongoDB');
-     })
-     .catch((error) => {
-       console.error('Error connecting to MongoDB:', error);
-     });
+// Connect to MongoDB
 
-   app.listen(port, () => {
-     console.log(`Server is running at http://localhost:${port}`);
-   });
-   ```
+main().catch((err) => console.log(err));
+
+async function main() {
+  await mongoose.connect('your connection string here, place in .env');
+  console.log('connected to mongoose');
+}
+```
 
 ### Step 2: Define the User Schema with Role and Password Hashing
 
@@ -94,6 +86,7 @@ Welcome to Day 4 of Week 2! Today, we will start by setting up a new project to 
    });
 
    // Method to compare passwords
+   // This next part can also be done inside the controller function instead of as a method here
    userSchema.methods.comparePassword = async function (candidatePassword) {
      return await bcrypt.compare(candidatePassword, this.password);
    };

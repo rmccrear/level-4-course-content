@@ -246,16 +246,18 @@ Hashing is a one-way cryptographic function that converts a password into a fixe
      });
 
    // Route to register a new user with hashed passwords
-   app.post('/register', async (req, res) => {
+   async function register(req, res, next) {
      try {
        const { name, email, password } = req.body;
        const user = new User({ name, email, password });
-       await user.save();
-       res.status(201).json({ message: 'User registered successfully' });
+       user.save();
+       const createdUser = await User.findOne({ email }).exec();
+       res.status(201).json(createdUser); // Normally an API will return an object with a message "User created"
+       // A second API call from the client would be made to get the new User, but we can return it like this
      } catch (error) {
-       res.status(400).json({ error: error.message });
+       res.status(500).send({ error: error.message });
      }
-   });
+   }
 
    app.listen(port, () => {
      console.log(`Server is running at http://localhost:${port}`);

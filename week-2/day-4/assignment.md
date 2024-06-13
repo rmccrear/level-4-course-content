@@ -51,6 +51,7 @@
      - Method: POST
      - URL: `http://localhost:3000/register`
      - Body: JSON
+
        ```json
        {
          "name": "John Doe",
@@ -64,12 +65,14 @@
      - Method: POST
      - URL: `http://localhost:3000/login`
      - Body: JSON
+
        ```json
        {
          "email": "john@example.com",
          "password": "password123"
        }
        ```
+
      - If successful, this should return a JWT token.
 
    - **Take Screenshots**:

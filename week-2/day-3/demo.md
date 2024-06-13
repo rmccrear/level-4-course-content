@@ -375,18 +375,14 @@ In the previous session, we learned how to hash passwords before storing them in
    // Middleware to parse JSON bodies
    app.use(express.json());
 
-   // Connect to MongoDB
-   mongoose
-     .connect('your-mongodb-connection-string-here', {
-       useNewUrlParser: true,
-       useUnifiedTopology: true,
-     })
-     .then(() => {
-       console.log('Connected to MongoDB');
-     })
-     .catch((error) => {
-       console.error('Error connecting to MongoDB:', error);
-     });
+  // Connect to MongoDB
+
+  main().catch((err) => console.log(err));
+
+  async function main() {
+    await mongoose.connect('your connection string here, place in .env');
+    console.log('connected to mongoose');
+  }
 
    // Route to register a new user with hashed passwords
    app.post('/register', async (req, res) => {

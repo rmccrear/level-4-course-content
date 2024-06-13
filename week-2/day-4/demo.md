@@ -100,7 +100,7 @@ async function main() {
 
 1. **Update `index.js` to include registration and login routes**:
 
-   ```js
+```js
    // index.js
    const express = require('express');
    const mongoose = require('mongoose');
@@ -113,65 +113,61 @@ async function main() {
    app.use(express.json());
 
    // Connect to MongoDB
-   mongoose
-     .connect('your-mongodb-connection-string-here', {
-       useNewUrlParser: true,
-       useUnifiedTopology: true,
-     })
-     .then(() => {
-       console.log('Connected to MongoDB');
-     })
-     .catch((error) => {
-       console.error('Error connecting to MongoDB:', error);
-     });
+   main().catch((err) => console.log(err));
 
-   // Route to register a new user with hashed passwords
-   app.post('/register', async (req, res) => {
-     try {
-       const { name, email, password } = req.body;
-       const user = new User({ name, email, password });
-       await user.save();
-       res.status(201).json({ message: 'User registered successfully' });
-     } catch (error) {
-       res.status(400).json({ error: error.message });
-     }
-   });
 
-   // Route to login a user
-   app.post('/login', async (req, res) => {
-     try {
-       const { email, password } = req.body;
-       const user = await User.findOne({ email });
-       if (!user) {
-         return res.status(400).json({ error: 'Invalid email or password' });
-       }
-       const isMatch = await user.comparePassword(password);
-       if (!isMatch) {
-         return res.status(400).json({ error: 'Invalid email or password' });
-       }
-       const token = jwt.sign(
-         { userId: user._id, role: user.role },
-         'your_jwt_secret',
-         { expiresIn: '1h' },
-       );
-       res.json({ token });
-     } catch (error) {
-       res.status(500).json({ error: error.message });
-     }
-   });
+  async function main() {
+  await mongoose.connect(process.env.DB);
+  console.log('Connected to Mongoose!');
+  }
+  // Route to register a new user with hashed passwords
+  app.post('/register', async (req, res) => {
+  try {
+  const { name, email, password } = req.body;
+  const user = new User({ name, email, password });
+  await user.save();
+  res.status(201).json({ message: 'User registered successfully' });
+  } catch (error) {
+  res.status(400).json({ error: error.message });
+  }
+  });
 
-   app.listen(port, () => {
-     console.log(`Server is running at http://localhost:${port}`);
-   });
-   ```
+  // Route to login a user
+  app.post('/login', async (req, res) => {
+  try {
+  const { email, password } = req.body;
+  const user = await User.findOne({ email });
+  if (!user) {
+  return res.status(400).json({ error: 'Invalid email or password' });
+  }
+  const isMatch = await user.comparePassword(password);
+  if (!isMatch) {
+  return res.status(400).json({ error: 'Invalid email or password' });
+  }
+  const token = jwt.sign(
+  { userId: user.\_id, role: user.role },
+  'your_jwt_secret',
+  { expiresIn: '1h' },
+  );
+  res.json({ token });
+  } catch (error) {
+  res.status(500).json({ error: error.message });
+  }
+  });
+
+  app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+  });
+
+```
 
 ### Step 4: Test Registration and Login Endpoints
 
 1. **Start Your Server**:
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
 2. **Test with Thunder Client or Postman**:
 
@@ -180,6 +176,7 @@ async function main() {
      - Method: POST
      - URL: `http://localhost:3000/register`
      - Body: JSON
+
        ```json
        {
          "name": "John Doe",
@@ -189,15 +186,18 @@ async function main() {
        ```
 
    - **Login a User**:
+
      - Method: POST
      - URL: `http://localhost:3000/login`
      - Body: JSON
+
        ```json
        {
          "email": "john@example.com",
          "password": "password123"
        }
        ```
+
      - If successful, this should return a JWT token.
 
 ### Step 5: Implement Middleware for Route Protection
@@ -234,31 +234,6 @@ We'll use middleware to check if a user is authenticated before allowing access 
 1. **Update `index.js` to include protected routes**:
 
    ```js
-   // index.js
-   const express = require('express');
-   const mongoose = require('mongoose');
-   const User = require('./models/User');
-   const auth = require('./middleware/auth');
-   const jwt = require('jsonwebtoken');
-   const app = express();
-   const port = 3000;
-
-   // Middleware to parse JSON bodies
-   app.use(express.json());
-
-   // Connect to MongoDB
-   mongoose
-     .connect('your-mongodb-connection-string-here', {
-       useNewUrlParser: true,
-       useUnifiedTopology: true,
-     })
-     .then(() => {
-       console.log('Connected to MongoDB');
-     })
-     .catch((error) => {
-       console.error('Error connecting to MongoDB:', error);
-     });
-
    // Route to register a new user with hashed passwords
    app.post('/register', async (req, res) => {
      try {
@@ -327,7 +302,7 @@ In this session, we've set up a new Express project, implemented user registrati
 
 <!--! Hour 2 -->
 
-# Day 4, Hour 2: Implementing Role-Based Access Control (RBAC)
+## Day 4, Hour 2: Implementing Role-Based Access Control (RBAC)
 
 Welcome to Hour 2 of Day 4! In this session, we will implement role-based access control (RBAC) to restrict access based on user roles. We'll build on the project we started in Hour 1.
 
@@ -400,7 +375,8 @@ Welcome to Hour 2 of Day 4! In this session, we will implement role-based access
    // middleware/role.js
    const role = (requiredRole) => {
      return (req, res, next) => {
-       if (req.user.role !== requiredRole) {
+       // Has to access user 2x because of how it saved
+       if (req.user.user.role !== requiredRole) {
          return res.status(403).json({ error: 'Access denied.' });
        }
        next();
@@ -415,32 +391,6 @@ Welcome to Hour 2 of Day 4! In this session, we will implement role-based access
 1. **Update `index.js` to include RBAC middleware and protected routes**:
 
    ```js
-   // index.js
-   const express = require('express');
-   const mongoose = require('mongoose');
-   const User = require('./models/User');
-   const auth = require('./middleware/auth');
-   const role = require('./middleware/role');
-   const jwt = require('jsonwebtoken');
-   const app = express();
-   const port = 3000;
-
-   // Middleware to parse JSON bodies
-   app.use(express.json());
-
-   // Connect to MongoDB
-   mongoose
-     .connect('your-mongodb-connection-string-here', {
-       useNewUrlParser: true,
-       useUnifiedTopology: true,
-     })
-     .then(() => {
-       console.log('Connected to MongoDB');
-     })
-     .catch((error) => {
-       console.error('Error connecting to MongoDB:', error);
-     });
-
    // Route to register a new user with hashed passwords
    app.post('/register', async (req, res) => {
      try {
@@ -506,6 +456,7 @@ Welcome to Hour 2 of Day 4! In this session, we will implement role-based access
      - Method: POST
      - URL: `http://localhost:3000/register`
      - Body: JSON
+
        ```json
        {
          "name": "Admin User",
@@ -520,6 +471,7 @@ Welcome to Hour 2 of Day 4! In this session, we will implement role-based access
      - Method: POST
      - URL: `http://localhost:3000/register`
      - Body: JSON
+
        ```json
        {
          "name": "Regular User",
@@ -534,12 +486,14 @@ Welcome to Hour 2 of Day 4! In this session, we will implement role-based access
      - Method: POST
      - URL: `http://localhost:3000/login`
      - Body: JSON
+
        ```json
        {
          "email": "admin@example.com",
          "password": "adminpassword123"
        }
        ```
+
      - Copy the token from the response.
 
    - **Access Admin Route as Admin**:

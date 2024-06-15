@@ -204,7 +204,6 @@
 | ----------------------------- | ---------------------------------------- | ------------------------------------------ | ------------------------------------------------------------- |
 | **Project Setup**             | Significant setup issues                 | Minor issues in setup                      | Project set up correctly with required packages               |
 | **Schema and Model**          | Schema and model not defined             | Schema and model defined with minor issues | Schema and model defined correctly                            |
-| **Route Implementation**      | Significant issues or routes not working | Minor issues in route implementation       | All routes are correctly implemented and working              |
 | **Authentication Middleware** | Middleware not implemented               | Middleware implemented with minor issues   | Middleware implemented correctly                              |
 | **Role-Based Access Control** | RBAC not implemented                     | RBAC implemented with minor issues         | RBAC implemented correctly                                    |
 | **Screenshots**               | Screenshots not provided or incomplete   | Some screenshots provided                  | All required screenshots provided and included in `README.md` |

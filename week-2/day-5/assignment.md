@@ -53,6 +53,7 @@
      - Method: POST
      - URL: `http://localhost:3000/register`
      - Body: JSON
+
        ```json
        {
          "name": "John Doe",
@@ -61,6 +62,7 @@
          "role": "user"
        }
        ```
+
      - Screenshot the POST request to register a user.
 
    - **Login a User**:
@@ -68,12 +70,14 @@
      - Method: POST
      - URL: `http://localhost:3000/login`
      - Body: JSON
+
        ```json
        {
          "email": "john@example.com",
          "password": "password123"
        }
        ```
+
      - If successful, this should return a JWT token.
      - Screenshot the POST request to login a user with the returned JWT token.
 
@@ -92,11 +96,13 @@
      - Header:
        - `Authorization: Bearer <your_jwt_token>`
      - Body: JSON
+
        ```json
        {
          "name": "Jane Doe"
        }
        ```
+
      - Screenshot the PUT request to update a user.
 
    - **Delete a User**:
@@ -140,6 +146,7 @@
      - Method: POST
      - URL: `http://localhost:3000/register`
      - Body: JSON
+
        ```json
        {
          "name": "Admin User",
@@ -148,6 +155,7 @@
          "role": "admin"
        }
        ```
+
      - Screenshot the POST request to register an admin user.
 
    - **Register a Regular User**:
@@ -155,6 +163,7 @@
      - Method: POST
      - URL: `http://localhost:3000/register`
      - Body: JSON
+
        ```json
        {
          "name": "Regular User",
@@ -163,6 +172,7 @@
          "role": "user"
        }
        ```
+
      - Screenshot the POST request to register a regular user.
 
    - **Access Admin Route as Admin**:

@@ -179,7 +179,7 @@
        const product = await Product.findByIdAndUpdate(
          req.params.id,
          req.body,
-         { new: true, runValidators: true }
+         { new: true, runValidators: true },
        );
        if (!product) {
          return res.status(404).json({ error: 'Product not found' });
@@ -296,12 +296,14 @@
      - Header:
        - `Authorization: Bearer <user_jwt_token>`
      - Body: JSON
+
        ```json
        {
          "name": "Jane Doe",
          "email": "jane@example.com"
        }
        ```
+
      - Screenshot the PUT request and response.
 
    - **Delete a User by ID (Admin Only)**:
@@ -329,6 +331,7 @@
      - Method: PUT
      - URL: `http://localhost:3000/products/<product_id>`
      - Body: JSON
+
        ```json
        {
          "name": "Large Coffee Mug",
@@ -339,6 +342,7 @@
          "imageUrl": "http://example.com/mug.jpg"
        }
        ```
+
      - Screenshot the PUT request and response.
 
    - **Delete a Product by ID**:

@@ -1,5 +1,3 @@
-### Week 3: Building a Backend for a Coffee Shop E-Commerce Site
-
 # Day 2: Implementing Authentication
 
 ## Overview
@@ -197,9 +195,11 @@ In today's session, we will add user authentication to our backend. We'll implem
 2. **Test with Thunder Client or Postman**:
 
    - **Register a User**:
+
      - Method: POST
      - URL: `http://localhost:3000/auth/register`
      - Body: JSON
+
        ```json
        {
          "name": "John Doe",
@@ -208,17 +208,22 @@ In today's session, we will add user authentication to our backend. We'll implem
          "role": "user"
        }
        ```
+
    - **Login a User**:
+
      - Method: POST
      - URL: `http://localhost:3000/auth/login`
      - Body: JSON
+
        ```json
        {
          "email": "john@example.com",
          "password": "password123"
        }
        ```
+
      - Copy the token from the response.
+
    - **Access Protected Product Routes**:
      - Method: GET
      - URL: `http://localhost:3000/products`

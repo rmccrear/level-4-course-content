@@ -1,5 +1,3 @@
-### Week 3: Building a Backend for a Coffee Shop E-Commerce Site
-
 # Day 3: Building RESTful APIs
 
 ## Overview

@@ -20,7 +20,7 @@ This week, we will build a backend API for a coffee shop e-commerce site. The ba
    mkdir coffee-shop-backend
    cd coffee-shop-backend
    npm init -y
-   npm install express mongoose
+   npm install express mongoose dotenv
    ```
 
 2. **Set Up the Server**:
@@ -35,18 +35,15 @@ This week, we will build a backend API for a coffee shop e-commerce site. The ba
    // Middleware to parse JSON bodies
    app.use(express.json());
 
-   // Connect to MongoDB
-   mongoose
-     .connect('your-mongodb-connection-string-here', {
+   async function mongooseConnect() {
+     await mongoose.connect('your-mongodb-connection-string-here', {
        useNewUrlParser: true,
        useUnifiedTopology: true,
-     })
-     .then(() => {
-       console.log('Connected to MongoDB');
-     })
-     .catch((error) => {
-       console.error('Error connecting to MongoDB:', error);
      });
+     console.log('Mongoose Connected');
+   }
+
+   mongooseConnect().catch((err) => console.log(err));
 
    app.listen(port, () => {
      console.log(`Server is running at http://localhost:${port}`);
@@ -106,7 +103,15 @@ This week, we will build a backend API for a coffee shop e-commerce site. The ba
    // Create a new product
    router.post('/', async (req, res) => {
      try {
-       const product = new Product(req.body);
+       const { name, description, price, category, stock, imageUrl } = req.body;
+       const product = new Product({
+         name,
+         description,
+         price,
+         category,
+         stock,
+         imageUrl,
+       });
        await product.save();
        res.status(201).json(product);
      } catch (error) {
@@ -182,19 +187,18 @@ This week, we will build a backend API for a coffee shop e-commerce site. The ba
 
    // Middleware to parse JSON bodies
    app.use(express.json());
+   require('dotenv').config();
 
    // Connect to MongoDB
-   mongoose
-     .connect('your-mongodb-connection-string-here', {
+   async function mongooseConnect() {
+     await mongoose.connect('your-mongodb-connection-string-here', {
        useNewUrlParser: true,
        useUnifiedTopology: true,
-     })
-     .then(() => {
-       console.log('Connected to MongoDB');
-     })
-     .catch((error) => {
-       console.error('Error connecting to MongoDB:', error);
      });
+     console.log('Mongoose Connected');
+   }
+
+   mongooseConnect().catch((err) => console.log(err));
 
    // Use the product routes
    app.use('/products', productRoutes);
@@ -215,6 +219,7 @@ This week, we will build a backend API for a coffee shop e-commerce site. The ba
 2. **Test with Thunder Client or Postman**:
 
    - **Create a Product**:
+
      - Method: POST
      - URL: `http://localhost:3000/products`
      - Body: JSON
@@ -228,13 +233,19 @@ This week, we will build a backend API for a coffee shop e-commerce site. The ba
          "imageUrl": "http://example.com/mug.jpg"
        }
        ```
+
    - **Get All Products**:
+
      - Method: GET
      - URL: `http://localhost:3000/products`
+
    - **Get a Single Product by ID**:
+
      - Method: GET
      - URL: `http://localhost:3000/products/<product_id>`
+
    - **Update a Product by ID**:
+
      - Method: PUT
      - URL: `http://localhost:3000/products/<product_id>`
      - Body: JSON
@@ -248,6 +259,7 @@ This week, we will build a backend API for a coffee shop e-commerce site. The ba
          "imageUrl": "http://example.com/mug.jpg"
        }
        ```
+
    - **Delete a Product by ID**:
      - Method: DELETE
      - URL: `http://localhost:3000/products/<product_id>`
@@ -255,5 +267,3 @@ This week, we will build a backend API for a coffee shop e-commerce site. The ba
 ## Conclusion
 
 In this session, we've set up a new Express project, connected to MongoDB using Mongoose, and defined the Product model. We've also implemented basic CRUD operations for products and tested them using Thunder Client or Postman. In the next session, we will add more advanced features to our API.
-
-

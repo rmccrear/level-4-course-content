@@ -286,17 +286,20 @@ In today's session, we will build out our RESTful API by adding more endpoints a
      - Header:
        - `Authorization: Bearer <user_jwt_token>`
    - **Update a User by ID**:
+
      - Method: PUT
      - URL: `http://localhost:3000/users/<user_id>`
      - Header:
        - `Authorization: Bearer <user_jwt_token>`
      - Body: JSON
+
        ```json
        {
          "name": "Jane Doe",
          "email": "jane@example.com"
        }
        ```
+
    - **Delete a User by ID (Admin Only)**:
      - Method: DELETE
      - URL: `http://localhost:3000/users/<user_id>`
@@ -309,9 +312,11 @@ In today's session, we will build out our RESTful API by adding more endpoints a
      - Method: GET
      - URL: `http://localhost:3000/products/<product_id>`
    - **Update a Product by ID**:
+
      - Method: PUT
      - URL: `http://localhost:3000/products/<product_id>`
      - Body: JSON
+
        ```json
        {
          "name": "Large Coffee Mug",
@@ -322,6 +327,7 @@ In today's session, we will build out our RESTful API by adding more endpoints a
          "imageUrl": "http://example.com/mug.jpg"
        }
        ```
+
    - **Delete a Product by ID**:
      - Method: DELETE
      - URL: `http://localhost:3000/products/<product_id>`

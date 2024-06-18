@@ -174,7 +174,7 @@ In today's session, we will add user authentication to our backend. We'll implem
 
    // Use the product and auth routes
    app.use('/products', productRoutes);
-   app.use('/auth', authRoutes);
+   app.use('/user', authRoutes);
 
    // Protect product routes
    app.use('/products', auth, productRoutes);

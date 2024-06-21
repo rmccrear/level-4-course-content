@@ -48,7 +48,7 @@ In today's session, we will add advanced features to our API, such as pagination
        const products = await Product.find(filter)
          .sort(sort)
          .limit(parseInt(limit))
-         .skip((page - 1) * limit);
+         .skip((page - 1) * limit).exec();
        const total = await Product.countDocuments(filter);
        res.json({ total, products });
      } catch (error) {

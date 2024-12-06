@@ -40,8 +40,8 @@ In this 1-hour assignment, you will learn how to create an Amazon S3 bucket, upl
      - **Principal:** Enter `*` to allow access from any user.
      - **Actions:** Select **GetObject** from the dropdown list.
      - **ARN:** Enter the bucket ARN in the format: `arn:aws:s3:::my-website-images-123/*` (replace `my-website-images-123` with your bucket name).
-       - Note: The ARN is the Amazon Resource Number of your S3 bucket.&#x20;
-       - You can copy and paste the ARN from the Properities tab of the S3 bucket. Be sure to add a /\* to the end to indicate a wildcard.
+       - Note: The ARN is the Amazon Resource Number of your S3 bucket.
+       - You can copy and paste the ARN from the Properties tab of the S3 bucket. Be sure to add a `/*` to the end to indicate a wildcard.
      - Click **Add Statement**, then **Generate Policy**.
    - Copy the generated policy into the **Bucket policy** editor.
    - Click **Save changes**.
@@ -66,11 +66,29 @@ In this 1-hour assignment, you will learn how to create an Amazon S3 bucket, upl
    - Open a new browser tab and paste the URL.
    - You should see the image load. This means it is publicly accessible and available via HTTPS.
 
-**Deliverable:**\
-Submit the public URL of your image along with a screenshot of your S3 bucket's permissions page to show that public access is enabled.
+**Deliverable:**
+1. Submit the public URL of your image along with a screenshot of your S3 bucket's permissions page to show that public access is enabled.
+
+2. Create a repository called `aws-topics` with a `README.md` file.
+
+3. Create a file called `HOW-TO-USE-S3.md`.
+
+4. Add your screenshot to this file along with notes on what you did to complete the assignment. These notes will help you to remember how to accomplish this task.
+
+5. Add notes about the concepts you learned such as Policy, Bucket, ARN, and wildcard.
 
 **Tips:**
 
 - Make sure you use a unique bucket name, as S3 bucket names must be globally unique.
 - Double-check your permissions if the image does not load publicly; ensuring the bucket policy is correct is crucial.
+
+**Rubric:**
+
+| Criteria                | Limited (0 pts)                                   | Partial (3 pts)                              | Complete (5 pts)                                  |
+|-------------------------|---------------------------------------------------|----------------------------------------------|---------------------------------------------------|
+| S3 Bucket Setup         | Significant issues in bucket creation or naming   | Minor issues in bucket creation              | Bucket is correctly created with appropriate settings |
+| Public Access Configuration | Public access not enabled correctly           | Minor issues in permissions setup            | Public access correctly enabled with appropriate policies |
+| Image Upload            | Image not uploaded or inaccessible               | Image uploaded with minor issues             | Image uploaded and publicly accessible via HTTPS   |
+| GitHub Repository Setup | Repository not created or incorrect structure    | Repository created with minor issues         | Repository correctly set up with appropriate structure |
+| Documentation Quality   | Documentation missing or unclear                 | Documentation provided with minor details missing | Detailed documentation provided in `HOW-TO-USE-S3.md` with all required notes  |
 

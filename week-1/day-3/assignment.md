@@ -79,18 +79,18 @@
 
 2. **Create the Server**
 
-   - Create a file named `index.js`.
+   - Create a file named `index.js` to serve as an entry point.
    - Set up a basic Express server that listens on port 3000.
    - Create a basic route that responds with "Hello, World!" at the root URL.
 
-3. **Organize Routes Using Express Router**
+3. **Use a routes object to organize your routes in a module**
 
-   - Create a directory named `routes`.
-   - Inside the `routes` directory, create a file named `index.js`.
-   - In `index.js`, set up a router that handles:
+   - Create a directory named `routes` to hold all your routes.
+   - Inside the `routes` directory, create a file named `main.js` to define the top level routes.
+   - In `main.js`, set up a router that handles:
      - A GET request at the root URL (`/`) that responds with "Hello from the main router!".
      - A GET request at `/about` that responds with "About Us".
-   - Import and use the router in the main `index.js` file.
+   - Import and use the router in the main `main.js` file. Use this router for routes at the base level `/`.
 
 4. **Handle Route Parameters**
 
@@ -101,9 +101,9 @@
 
    - Inside the `routes` directory, create a file named `users.js`.
    - Set up the `users.js` router to handle:
-     - A GET request at the root URL (`/users`) that responds with "List of all users".
+     - A GET request at the root URL (`/`) that responds with "List of all users".
      - A GET request at `/:id` that responds with the user ID.
-   - Modify the main router (`index.js`) to use the `users.js` router for routes starting with `/users`.
+   - Modify the entry point (`index.js`) to use the `users.js` router for all routes starting with `/users`. For example, the route `/users` should respond with "List of all users".
 
 6. **Test the Routes**
    - Start the server using Nodemon.

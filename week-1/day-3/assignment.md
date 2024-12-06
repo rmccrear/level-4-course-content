@@ -92,20 +92,16 @@
      - A GET request at `/about` that responds with "About Us".
    - Import and use the router in the main `main.js` file. Use this router for routes at the base level `/`.
 
-4. **Handle Route Parameters**
-
-   - Modify the router to handle a GET request at `/user/:id` that responds with the user ID.
-   - Test this route by navigating to URLs like `http://localhost:3000/user/123`.
-
-5. **Create Nested Routes**
+4. **Create Nested Routes for `/user`**
 
    - Inside the `routes` directory, create a file named `users.js`.
    - Set up the `users.js` router to handle:
      - A GET request at the root URL (`/`) that responds with "List of all users".
      - A GET request at `/:id` that responds with the user ID.
    - Modify the entry point (`index.js`) to use the `users.js` router for all routes starting with `/users`. For example, the route `/users` should respond with "List of all users".
+   - Test this route by navigating to URLs like `http://localhost:3000/user/123`.
 
-6. **Test the Routes**
+5. **Test the Routes**
    - Start the server using Nodemon.
    - Test the following routes:
      - `http://localhost:3000/` - Should display "Hello from the main router!".

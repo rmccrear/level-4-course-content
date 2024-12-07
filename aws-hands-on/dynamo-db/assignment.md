@@ -30,6 +30,7 @@ In this 1-hour assignment, you will learn how to create an Amazon DynamoDB table
    - Go to the **Items** tab.
    - Click **Create item**.
    - Use the JSON editor to enter the following data for the first item:
+
      ```json
      {
        "ProductID": "101",
@@ -38,6 +39,7 @@ In this 1-hour assignment, you will learn how to create an Amazon DynamoDB table
        "Stock": 15
      }
      ```
+
    - Click **Save**.
    - Repeat the process to add at least two more items with different `ProductID` values and properties.
 

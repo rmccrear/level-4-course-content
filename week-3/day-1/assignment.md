@@ -17,8 +17,18 @@
    mkdir coffee-shop-backend
    cd coffee-shop-backend
    npm init -y
-   npm install express mongoose
+   npm install express mongoose dotenv
    ```
+   npm install -save-dev nodemon
+   ```
+
+   Add scripts to the `package.json` file to run the server using `nodemon`.
+
+    ```json
+    "scripts": {
+      "start": "node index.js",
+      "dev": "nodemon index.js"
+    }
 
 2. **Set Up the Server**:
 
@@ -38,10 +48,7 @@ Remember to replace `'your-mongodb-connection-string-here'` with your actual Mon
 
    // Connect to MongoDB
    mongoose
-     .connect('your-mongodb-connection-string-here', {
-       useNewUrlParser: true,
-       useUnifiedTopology: true,
-     })
+     .connect('your-mongodb-connection-string-here')
      .then(() => {
        console.log('Connected to MongoDB');
      })
@@ -58,20 +65,22 @@ Remember to replace `'your-mongodb-connection-string-here'` with your actual Mon
 
 1. **Create the Product Schema and Model**:
 
-Create a new file named `Product.js` inside a `models` folder. Define the schema and model for the `Product` collection.
+Create a new file named `Product.js` inside a `models` folder. Define the schema and model for the `Product` collection. (Note that Product is capitalized and singular because it represents a model.)
 
-Your product will have the following fields:  
+```js
+
+Your `Product` will have the following fields:  
 
 - `name`: String, required
 - `description`: String, required
 - `price`: Number, required
 - `category`: String, required
-- `stock`: Number, required
-- `imageUrl`: String, required
+- `stock`: Number
+- `imageUrl`: String
 
 ### Part 3: Implement Basic CRUD Operations
 
-1. **Setup the Routes directory and create the first route for the products.**
+ Step 0. **Setup the Routes directory and create the first route for the products.**
 
 Create a new folder named `routes` in the root directory of the project. Create a new file named `products.js` in the `routes` folder. Create a stub route for the `/` path that returns a JSON response.
 
@@ -98,11 +107,11 @@ const productRoutes = require('./routes/products');
 app.use('/products', productRoutes);
 ```
 
-Test the route by sending a GET request to `http://localhost:3000/products` using Thunder Client or Postman. You should see the JSON response.
+Test the route by sending a GET request to `http://localhost:3000/products` using Thunder Client or Postman. You should see the JSON response: `{"message": "Get all products"}`.
 
 Create a commit after setting up the first route.
 
-1. **Create the Routes**:
+Step 1. **Create the Routes**:
 
 Now that you know it works, you can create more routes in the `products.js` file.
 Create stub routes the following routes for the products:
@@ -137,7 +146,7 @@ Test them with Thunder Client or Postman.
 
 Create a commit after creating all the stub routes.
 
-2. **Implement the Routes**:
+Step 2. **Implement the Routes**:
 
 For each route, implement the route handler to perform the CRUD operation on the `Product` model. Then test the route with Thunder Client or Postman.
 

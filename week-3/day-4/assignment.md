@@ -253,7 +253,9 @@
    module.exports = router;
    ```
 
-### Step 3: Integrate File Upload Middleware with the Server
+### Step 3: Add upload folder to static files on server
+
+(Note: Your files will upload to a folder called `uploads` in the root of your project. You need to add this folder to .gitignore, and you need to add this folder to the static files on your server. This way, the files will be served via the url `/uploads/FILENAME.PNG`, for example.)
 
 1. **Update Server Setup**:
 

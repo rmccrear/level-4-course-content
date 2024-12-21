@@ -32,6 +32,8 @@ We will use Multer with AWS SDK for JavaScript (v3) to upload files to an S3 buc
   - Save the user's access key ID and secret access key.
   - Configure the S3 bucket to allow access from the user.
 
+### Policy for Bucket
+
 Here is an example policy to allow access to your user:
 
 Replace `ACCOUNT_ID` with your AWS account ID and `USER_NAME` with your user's name. Replace the ARN of the bucket with the ARN of your bucket.
@@ -54,6 +56,8 @@ Replace `ACCOUNT_ID` with your AWS account ID and `USER_NAME` with your user's n
     }
   ]
 }
+
+### More Specific Policy for User (Optional)
 
 (Optional) Here is an example policy to attach to your user instead of S3FullAccess:
 
@@ -140,6 +144,54 @@ router.post('/upload', upload, (req, res) => {
 6. **Test the File Upload API**:
 
 You can now test the file upload API by sending a POST request with a file to the `/upload` endpoint.
+
+7. **Setup S3 Bucket for Public Access**:
+
+To make the uploaded files publicly accessible, you need to configure the S3 bucket policy to allow public access.
+
+You will need to update the policy in the S3 bucket to allow public access to the files by adding this to the policy. You'll need to combine this with the existing policy.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::coffee-images/*"
+    }
+  ]
+}
+```
+
+Combined with the existing policy, your bucket policy should have two items in the "Statement" field and look like this: (remember to replace `ACCOUNT_ID` and `USER_NAME` as well as update the bucket ARN)
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowIAMUserAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::ACCOUNT_ID:user/USER_NAME"
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::coffee-images",
+        "arn:aws:s3:::coffee-images/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::coffee-images/*"
+    }
+  ]
+}
+```
 
 ## Summary
 

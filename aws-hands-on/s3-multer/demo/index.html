@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display an image</title>
+  <!-- use a classless css framework-->
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+  <style>
+    input {
+      margin: 10px 0;
+      padding: 5px;
+      width: 100%;
+    }
+    #image-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="image-url" placeholder="Enter image URL">
+  <button onclick="displayImage()">Display image</button>
+
+  <div id="image-container"></div>
+
+  <script>
+    function displayImage() {
+      const imageUrl = document.getElementById('image-url').value;
+      const imageContainer = document.getElementById('image-container');
+      imageContainer.innerHTML = `<img src="${imageUrl}" alt="Image" style="max-width: 100%;">`;
+    }
+  </script>
+  
+</body>
+</html>

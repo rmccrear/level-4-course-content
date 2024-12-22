@@ -135,6 +135,8 @@ After uploading the file, you can get the location of the file in the S3 bucket 
 
 You will have to change your POST and PUT routes to handle the file upload and update the image URL in the database.
 
+Note: this blog post shows clearly how to implement the node server with multer and s3: [Upload Images to AWS S3 using Multer in Node.js](https://dev.to/paras594/upload-images-to-aws-s3-using-multer-in-nodejs-1164)
+
 ```js
 // Upload file to S3
 router.post('/upload', upload, (req, res) => {

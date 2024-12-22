@@ -36,7 +36,7 @@ We will use Multer with AWS SDK for JavaScript (v3) to upload files to an S3 buc
 
 Here is an example policy to allow access to your user:
 
-Replace `ACCOUNT_ID` with your AWS account ID and `USER_NAME` with your user's name. Replace the ARN of the bucket with the ARN of your bucket.
+**Bucket Policy:** Replace `ACCOUNT_ID` with your AWS account ID and `USER_NAME` with your user's name. Replace the ARN of the bucket with the ARN of your bucket.
 
 ```json
 {
@@ -56,11 +56,13 @@ Replace `ACCOUNT_ID` with your AWS account ID and `USER_NAME` with your user's n
     }
   ]
 }
+```
 
 ### More Specific Policy for User (Optional)
 
 (Optional) Here is an example policy to attach to your user instead of S3FullAccess:
 
+**Optional User Policy:** Replace the ARN of the bucket with the ARN of your bucket.
 
 ```json
 {

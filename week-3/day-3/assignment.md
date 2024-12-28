@@ -208,6 +208,12 @@
 
 ### Step 3: Handle Errors and Edge Cases
 
+**Note:** Double check that you are on express version 5.0.0 or higher. If not, you may need to update your express version in order for errors to be handled in async functions routes.
+
+```bash
+  npm install express@latest
+```
+
 1. **Create Error Handling Middleware**:
 
    ```js
@@ -272,6 +278,10 @@
    ```
 
 2. **Test with Thunder Client or Postman**:
+
+**Note:** All requests to `products` and `users` should now include the `Authorization` header with the JWT token. Requests to `/auth/login` and `/auth/register` should not include the `Authorization` header. This is because you don't need to be signed in to sign in, and you don't need to be registered to register!
+
+You can set the header `Authorization` in each request (as shown bellow), or you can set it for the entire collection in Postman using the `Bearer Auth` setting of the collection.
 
    - **Get All Users (Admin Only)**:
 

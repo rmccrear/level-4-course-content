@@ -16,6 +16,12 @@
    npm install bcryptjs jsonwebtoken
    ```
 
+   Don't forget to install dotenv if you haven't already.
+
+   ```bash
+    npm install dotenv
+  ```
+
 2. **Create the User Model**:
 
    ```js

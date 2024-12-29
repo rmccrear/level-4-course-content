@@ -1,7 +1,14 @@
 # Day 2 Guide: Coffee Shop Frontend
 
 ## Objective:  
-Create pages for the Coffee Shop frontend, then break them into reusable components while the layout and structure are fresh in your mind. Utilize Storybook to verify components, and enhance the design for consistency across the application.
+
+Continue building the project you started in Day 1. Today, you will create pages for the Coffee Shop frontend, then break them into reusable components while the layout and structure are fresh in your mind. Utilize Storybook to verify components, and enhance the design for consistency across the application.
+
+Note: If you are unable to complete the full assignment, focus on the login pages and the product pages. If you can't get to the cart, you can still make a decent project. Then, you can fill in the other pages later if you have time, or leave them as a stretch goal. However, some of the pages in the Cart functionality are repetitive, so you may be able to reuse components from the product page for the cart page.
+
+Here are some helpful resources you may look into:
+
+- [React Forms](https://daveceddia.com/react-forms/). You may find this helpful in day three when finish design and begin work on functionality.
 
 ---
 
@@ -34,6 +41,39 @@ You may copy some data from https://dummyjson.com/docs/products
 
 Remember to git commit with a message like: "Add basic pages for the Coffee Shop frontend."
 
+### Example: Home (Splash) Page (`src/pages/index.jsx`)
+```jsx
+export default function Home() {
+  return (
+    <div>
+      <h1>Welcome to the Coffee Shop!</h1>
+    </div>
+  );
+}
+```
+
+### Example 2: Product Page (`src/pages/products/[id].jsx`)
+```jsx
+export default function ProductPage({ id }) {
+  return (
+    <div>
+      <h1>Product Page for product &num; { id }</h1>
+    </div>
+  );
+}
+```
+
+### Example 3: Products Page (`src/pages/products/index.jsx`)
+```jsx
+export default function ProductsPage() {
+  return (
+    <div>
+      <h1>Products Page</h1>
+    </div>
+  );
+}
+```
+
 ---
 
 ## **2. Splash Page (Home Page)**
@@ -53,7 +93,7 @@ In `index.jsx`, build a splash page that includes the following:
 
 ### **Step 3**: Example: Update the Button to handle click events
 
-- in `Button.jsx`:
+- in `src/components/Button.jsx`:
   ```jsx
   export default function Button({ label, handleClick }) {
     return (
@@ -82,18 +122,21 @@ In `index.jsx`, build a splash page that includes the following:
       </div>
     );
   }
-  ``` 
+  ```
 
-  This will allow the button to navigate to the signup page when clicked, but also keep the button flexible for other uses.
+  This will allow the button to navigate to the signup page when clicked, but also keep the Button component flexible for other uses.
 
 ### **Step 4**: Verify in Storybook
 
 Verify that your Button still works in Storybook.
 
-git commit with a message like "Add Button component with click handling."
+**git commit** with a message like "Add Button component with click handling."
 ---
 
 ## **3. Signup Page**
+
+Follow a similar process to the Splash page for the signup page and the rest of the pages. The goal is to build out your design, then break it into components. This will help you keep things organized. Focus on visual design and components. You will add functionality, like button clicks, later.
+
 ### **Step 1**: Layout
 - Include the header and footer components from the splash page.
 - Add a form with the following fields:
@@ -107,7 +150,7 @@ git commit with a message like "Add Button component with click handling."
   - **`buttonLabel`**: A string that determines the button's text.
 - Use **PropTypes** to validate `buttonLabel` as a string.
 
-Example (Note: insert your own JSX and design choices into this component):
+Example (Note 1: insert your own JSX and design choices into this component.) (Note 2: Don't forget to include PropTypes so you can validate the prop types in storybook.):
 ```jsx
 import PropTypes from 'prop-types';
 import Button from '@components/Button';
@@ -146,6 +189,7 @@ git commit with a message like "Add Signin page form"
 
 ## **5. Product Page**
 ### **Step 1**: Layout
+- In `src/pages/product/[id].jsx`, create a layout for a single product page.
 - Include a header and footer.
 - Create a product card displaying:
   - Product image
@@ -155,6 +199,7 @@ git commit with a message like "Add Signin page form"
   - Add to Cart Button
 
 ### **Step 2**: Break Into a `ProductCard` Component
+- Create or update your `ProductCard` component.
 - Pass the product data as a prop to the `ProductCard` component.
 - Use **PropTypes** to validate the product as an object.
 
@@ -188,6 +233,7 @@ git commit with a message like "Add Product page."
 ---
 
 ## **6. Products Page**
+- in `src/pages/products/index.jsx`, create a layout for the products page.
 - Use the `ProductCard` component to display a list of products.
 - Create mock data for products and iterate over them using `.map()`.
 
@@ -220,6 +266,7 @@ git commit with a message like "Add Products page to display multiple products."
 ---
 
 ## **7. Cart Page**
+- in `src/pages/cart.jsx`, create a layout for the cart page.
 - Create mock cart data (copy from product mock data).
 - Use `ProductCard` to display cart items, with the button labeled `"Remove from Cart"`.
 - Add a `"Checkout"` button at the bottom.
@@ -239,6 +286,7 @@ git commit with a message like "Add Cart page."
 ---
 
 ## **8. Checkout Page**
+- in `src/pages/checkout.jsx`, create a layout for the checkout page.
 - Include the header and footer.
 - Create a form to collect:
   - Address

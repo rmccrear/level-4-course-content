@@ -12,6 +12,14 @@ Here are some helpful resources you may look into:
 
 ---
 
+**Note:** Before you begin, create a new branch for your work. Make sure your main branch is up to date. Then create a new branch called design-components.
+
+```bash
+git switch main
+git pull
+git switch -c design-components
+```
+
 ## **1. Create Basic Pages**
 Set up the following blank pages in the `pages` directory. These pages will serve as the foundation of your application:
 
@@ -322,6 +330,31 @@ git commit with a message like "Improve design and styling."
   - Accessibility features.
 
 git commit with a message like "Update README with design details."
+
+Then create a pull request to merge your changes into the main branch.
+
+```bash
+git add .
+git commit -m "Update README with design details."
+git push origin design-components
+```
+
+On GitHub, create a pull request to merge your changes into the main branch. Then click the "Merge pull request" button to merge your changes.
+
+Finally, on your local machine, switch back to the main branch and pull the changes:
+
+```bash
+git switch main
+git pull
+```
+
+You may safely delete the `design-components` branch now that the changes have been merged into the main branch. Or you may keep it for future reference.
+
+```bash
+git branch -d design-components
+```
+
+Tomorrow, you will branch again from the main branch to continue working on the project.
 
 ### Submit Your Work
 

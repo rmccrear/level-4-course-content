@@ -133,6 +133,11 @@ It's a good idea to deploy your app to Vercel right away to ensure it works as e
 - Note: Although you have no Environment Variables yet, remember to update your Environment Variables in Vercel to match your `.env.local` file as you add them.
 - Check your deployed app to ensure it works as expected after each commit to see if you can catch any bugs as they are made.
 
+7. Create a new branch for your work today.
+
+```bash
+  git switch -c setup-components
+```
 ---
 
 ## **2. Setup Storybook**
@@ -482,6 +487,31 @@ Storybook may will already be running after the installation. If not, you can st
 ## **9. Commit and Push Changes**
 
 Make sure to commit your changes and push them to GitHub. Then check to see if your app is deployed on Vercel. You may have accidentally added something that causes an error in production, so it's good to check after each commit.
+
+Then create a pull request to merge your changes into the main branch.
+
+```bash
+git add .
+git commit -m "Setup components and backend connection"
+git push origin setup-components
+```
+
+On GitHub, create a pull request to merge your changes into the main branch. Then click the "Merge pull request" button to merge your changes.
+
+Finally, on your local machine, switch back to the main branch and pull the changes:
+
+```bash
+git switch main
+git pull
+```
+
+You may safely delete the `setup-components` branch now that the changes have been merged into the main branch. Or you may keep it for future reference.
+
+```bash
+git branch -d setup-components
+```
+
+Tomorrow, you will branch again from the main branch to continue working on the project.
 
 ## **10. Submission**
 

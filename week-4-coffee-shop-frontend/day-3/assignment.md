@@ -228,6 +228,12 @@ git commit -m "Add utility functions for handling localStorage operations"
 git push origin main
 ```
 
+### Submit Your Work
+
+Submit the GitHub repository link for the project. Be sure to include the link to the deployed app on Vercel.
+
+Check that your deployment on Vercel still works. If your deploy stops working, take a screenshot of the error message on Vercel and submit it with your repository link. Give a brief description of the work that you completed after the deploy stopped working.
+
 ---
 
 By the end of Day 3, your Coffee Shop frontend will have functional mock interactions, a dynamic UI, and persistent mock data via localStorage. This foundation prepares you for future lessons on backend integration.

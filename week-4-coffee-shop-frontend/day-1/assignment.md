@@ -36,10 +36,79 @@ Set up a solid foundation for the project by creating a Next.js app, integrating
 
    Verify the app runs at [http://localhost:3000](http://localhost:3000).
 
-4. Update your README.md file.
+4. **Update your README.md file.**
 
 - delete the default content.
 - add an outline of what you plan to do or the template provided in the assignment.
+- commit your changes.
+
+```markdown
+# Coffee Shop Frontend
+
+This is a project to build a frontend for a coffee shop. The project will include a variety of components and features to create a user-friendly experience for customers.
+
+Live link: ...
+
+## Technologies
+
+- React
+- Next.js
+- Tailwind CSS
+- Storybook
+- DaisyUI
+- Vercel
+- ...
+
+## Components
+
+- [ ] Navbar
+- [ ] Footer
+- [ ] Button
+- [ ] Loader
+- [ ] Toast
+- [ ] ProductCard
+- [ ] CartItem
+- [ ] CartSummary
+
+## Features
+- [ ] Tailwind CSS with DaisyUI integration.
+- [ ] Storybook for component development.
+- [ ] Backend connection with a sample HelloBackend component.
+
+## Setup
+If you would like to try this project out or contribute, follow these steps:
+
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Start the app with `npm run dev`.
+4. Open Storybook with `npm run storybook`.
+5. Test the backend connection with the HelloBackend component.
+
+## Contributing
+If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature.
+3. Make your changes.
+4. Test your changes.
+5. Push your changes to your fork.
+6. Create a pull request.
+
+## Screenshots
+
+Add screenshots of the app here.
+
+## Attribution
+
+Give credit to any resources or inspiration you used in this project.
+
+- [Tailwind CSS](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
+- [Storybook](https://storybook.js.org/)
+
+
+
+```
 
 5. Update index.js file.
 
@@ -409,6 +478,16 @@ Storybook may will already be running after the installation. If not, you can st
      - Storybook for component development.
      - Backend connection with a sample HelloBackend component.
      ```
+
+## **9. Commit and Push Changes**
+
+Make sure to commit your changes and push them to GitHub. Then check to see if your app is deployed on Vercel. You may have accidentally added something that causes an error in production, so it's good to check after each commit.
+
+## **10. Submission**
+
+Submit the GitHub repository link for the project. Be sure to include the link to the deployed app on Vercel.
+
+If your deploy stops working, take a screenshot of the error message on Vercel and submit it with your repository link. Give a brief description of the work that you completed after the deploy stopped working.
 
 ---
 

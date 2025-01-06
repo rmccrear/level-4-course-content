@@ -10,6 +10,39 @@ Note: here are a few videos to help you understand the concepts for today.
 
 ---
 
+## Step 0: **Setup .env File and Connect to Backend**
+
+1. **Create `.env.local` File**:
+
+   ```plaintext
+   NEXT_PUBLIC_API_BASE_URL=http://localhost:3000
+   NEXT_PUBLIC_API_BASE_URL_PROD=https://api.onrender.com
+   ```
+
+2. **Connect to Backend**:
+   - Create a simple component:
+
+     ```javascript
+     // components/HelloBackend.js
+     import api from '../utils/api';
+
+     export default function HelloBackend() {
+       const fetchGreeting = async () => {
+         const response = await api.get('/hello-world');
+         console.log(response.data);
+       };
+
+       fetchGreeting();
+
+       return <div>Hello Backend</div>;
+     }
+     ```
+
+3. **Test Backend Connection**:
+   - Verify the console logs the response from the backend.
+
+---
+
 ## **Step 1: Create Stub Functions**
 
 ### **Instructions**:

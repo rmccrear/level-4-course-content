@@ -2,7 +2,7 @@
 
 ## Objective
 
-Set up a solid foundation for the project by creating a Next.js app, integrating Storybook for component development, and establishing a connection with the backend API. Follow an incremental approach to ensure all components and connections work as expected before moving forward.
+Set up a solid foundation for the project by creating a Next.js app, integrating Storybook for component development, and building stubs for your components. Follow an incremental approach to ensure all components work as expected before moving forward.
 
 ---
 
@@ -73,7 +73,7 @@ Live link: ...
 ## Features
 - [ ] Tailwind CSS with DaisyUI integration.
 - [ ] Storybook for component development.
-- [ ] Backend connection with a sample HelloBackend component.
+- [ ] Component stubs for all components.
 
 ## Setup
 If you would like to try this project out or contribute, follow these steps:
@@ -82,7 +82,6 @@ If you would like to try this project out or contribute, follow these steps:
 2. Run `npm install` to install dependencies.
 3. Start the app with `npm run dev`.
 4. Open Storybook with `npm run storybook`.
-5. Test the backend connection with the HelloBackend component.
 
 ## Contributing
 If you would like to contribute to this project, please follow these steps:
@@ -275,38 +274,6 @@ Storybook may will already be running after the installation. If not, you can st
      Add one screenshot of the Storybook interface to your README.md. 
 ---
 
-## **4. Setup .env File and Connect to Backend**
-
-1. **Create `.env.local` File**:
-
-   ```plaintext
-   NEXT_PUBLIC_API_BASE_URL=http://localhost:3000
-   NEXT_PUBLIC_API_BASE_URL_PROD=https://api.onrender.com
-   ```
-
-2. **Connect to Backend**:
-   - Create a simple component:
-
-     ```javascript
-     // components/HelloBackend.js
-     import api from '../utils/api';
-
-     export default function HelloBackend() {
-       const fetchGreeting = async () => {
-         const response = await api.get('/hello-world');
-         console.log(response.data);
-       };
-
-       fetchGreeting();
-
-       return <div>Hello Backend</div>;
-     }
-     ```
-
-3. **Test Backend Connection**:
-   - Verify the console logs the response from the backend.
-
----
 
 ## **5. Setup DaisyUI**
 

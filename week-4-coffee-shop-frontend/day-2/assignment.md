@@ -47,6 +47,44 @@ You may copy some data from https://dummyjson.com/docs/products
 
 (Note: take care to note differences in the structure of the data from our actual backend (id vs _id, etc.))
 
+Or you may use this example data:
+
+```json
+[
+  {
+    "name": "Espresso",
+    "description": "A strong and concentrated coffee beverage.",
+    "price": 2.5,
+    "category": "Beverage",
+    "stock": 10,
+    "imageUrl": "/sample-images/espresso.jpg"
+  },
+  {
+    "name": "Cappuccino",
+    "description": "An Italian coffee drink that is traditionally prepared with equal parts espresso, steamed milk, and milk foam.",
+    "price": 3.5,
+    "category": "Beverage",
+    "stock": 5,
+    "imageUrl": "/sample-images/cappuccino.jpg"
+  },
+  {
+    "name": "Croissant",
+    "description": "A buttery, flaky, viennoiserie pastry named for its crescent shape.",
+    "price": 2,
+    "category": "Food",
+    "stock": 8,
+    "imageUrl": "/sample-images/croissant.jpg"
+  },
+  {
+    "name": "Muffin",
+    "description": "A small, sweet baked good that is typically made with ingredients such as flour, sugar, eggs, and butter.",
+    "price": 2.5,
+    "category": "Food",
+    "stock": 6,
+    "imageUrl": "/sample-images/muffin.jpg"
+  }
+]
+
 Remember to git commit with a message like: "Add basic pages for the Coffee Shop frontend."
 
 ### Example: Home (Splash) Page (`src/pages/index.jsx`)

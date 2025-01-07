@@ -280,7 +280,7 @@ Storybook may will already be running after the installation. If not, you can st
 1. **Install DaisyUI**:
 
    ```bash
-   npm install daisyui
+   npm install --save-dev daisyui
    ```
 
 2. **Configure DaisyUI**:

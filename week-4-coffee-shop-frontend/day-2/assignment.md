@@ -49,6 +49,7 @@ You may copy some data from https://dummyjson.com/docs/products
 
 Or you may use this example data:
 
+### Example: Products Data (`/src/mocks/products.json`)
 ```json
 [
   {
@@ -57,7 +58,8 @@ Or you may use this example data:
     "price": 2.5,
     "category": "Beverage",
     "stock": 10,
-    "imageUrl": "/sample-images/espresso.jpg"
+    "imageUrl": "/sample-images/espresso.jpg",
+    "_id": 0
   },
   {
     "name": "Cappuccino",
@@ -65,7 +67,8 @@ Or you may use this example data:
     "price": 3.5,
     "category": "Beverage",
     "stock": 5,
-    "imageUrl": "/sample-images/cappuccino.jpg"
+    "imageUrl": "/sample-images/cappuccino.jpg",
+    "_id": 1
   },
   {
     "name": "Croissant",
@@ -73,7 +76,8 @@ Or you may use this example data:
     "price": 2,
     "category": "Food",
     "stock": 8,
-    "imageUrl": "/sample-images/croissant.jpg"
+    "imageUrl": "/sample-images/croissant.jpg",
+    "_id": 2
   },
   {
     "name": "Muffin",
@@ -81,9 +85,50 @@ Or you may use this example data:
     "price": 2.5,
     "category": "Food",
     "stock": 6,
-    "imageUrl": "/sample-images/muffin.jpg"
+    "imageUrl": "/sample-images/muffin.jpg",
+    "_id": 3
   }
 ]
+```
+### Example Cart data
+
+`/src/mocks/cart.json`
+
+```json
+{
+    "_id": "1",
+    "products": [
+        {
+          "name": "Espresso",
+          "description": "A strong and concentrated coffee beverage.",
+          "price": 2.5,
+          "category": "Beverage",
+          "stock": 10,
+          "imageUrl": "/sample-images/espresso.jpg",
+          "_id": 0
+        },
+        {
+          "name": "Croissant",
+          "description": "A buttery, flaky, viennoiserie pastry named for its crescent shape.",
+          "price": 2,
+          "category": "Food",
+          "stock": 8,
+          "imageUrl": "/sample-images/croissant.jpg",
+          "_id": 2
+        },
+        {
+          "name": "Muffin",
+          "description": "A small, sweet baked good that is typically made with ingredients such as flour, sugar, eggs, and butter.",
+          "price": 2.5,
+          "category": "Food",
+          "stock": 6,
+          "imageUrl": "/sample-images/muffin.jpg",
+          "_id": 3
+        }
+    ],
+    "user": "1"
+}
+```
 
 Remember to git commit with a message like: "Add basic pages for the Coffee Shop frontend."
 
@@ -237,12 +282,35 @@ git commit with a message like "Add Signin page form"
 ### **Step 1**: Layout
 - In `src/pages/product/[id].jsx`, create a layout for a single product page.
 - Include a header and footer.
+- import the data from the mock products file at `src/mocks/products.json`.
 - Create a product card displaying:
   - Product image
   - Name
   - Description
   - Price
   - Add to Cart Button
+
+**Starter code for Product Page**:
+```jsx
+import products from '../../mocks/products.json';
+import Button from '@components/Button';
+
+// In Next.js, the id is passed as the second argument to the page component
+// this comes from the file name `products/[id].jsx`
+export default function ProductPage(props, { id }) {
+  const product = products[id];
+  return (
+    <div>
+      {/* TODO: Put this in CardProduct --> */}
+      <h1>{product.name}</h1>
+      <img src={product.imageUrl} alt={product.name} />
+      <p>{product.description}</p>
+      <p>${product.price}</p>
+      <Button title="Add to Cart"></Button>
+    </div>
+  );
+}
+```
 
 ### **Step 2**: Break Into a `ProductCard` Component
 - Create or update your `ProductCard` component.
@@ -287,19 +355,25 @@ Example:
 Note: you may put the mock data in a separate file and import it. You may also add test images to the `public` folder in your project.
 ```jsx
 import ProductCard from '../components/ProductCard';
+import products from '../mocks/products.json';
 import '@/styles/products.css';
 
-const products = [
-  { _id: 1, name: 'Coffee A', description: 'Rich and smooth.', price: 10, image: '/coffee-a.jpg' },
-  { _id: 2, name: 'Coffee B', description: 'Dark roast.', price: 12, image: '/coffee-b.jpg' },
-];
+// const products = [
+//   { _id: 1, name: 'Coffee A', description: 'Rich and smooth.', price: 10, image: '/coffee-a.jpg' },
+//   { _id: 2, name: 'Coffee B', description: 'Dark roast.', price: 12, image: '/coffee-b.jpg' },
+// ];
 
 export default function ProductsPage() {
+  const productsJSX = products.map((product) => {
+    // Use key prop every time you use map.
+    // This is a unique identifier for each product.
+    // React is not smart enough to keep track of the order of items in a list.
+    // so we need to give it help by providing a unique key prop.
+    return (<ProductCard key={product._id} product={product} />)
+  });
   return (
     <div className="products-grid">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+      {productsJSX}
     </div>
   );
 }
@@ -318,14 +392,6 @@ git commit with a message like "Add Products page to display multiple products."
 - Add a `"Checkout"` button at the bottom.
 - Use Flexbox for layout.
 - Optional: Break the cart items into a `CartItems` component if you don't like the way it looks with a standard Product component.
-
-Mock data example:
-```jsx
-const cartItems = [
-  { _id: 1, name: 'Coffee A', description: 'Rich and smooth.', price: 10, image: '/coffee-a.jpg' },
-  { _id: 2, name: 'Coffee B', description: 'Dark roast.', price: 12, image: '/coffee-b.jpg' },
-];
-```
 
 git commit with a message like "Add Cart page."
 

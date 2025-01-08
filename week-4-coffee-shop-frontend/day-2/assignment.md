@@ -28,8 +28,8 @@ Set up the following blank pages in the `pages` directory. These pages will serv
 
 ### **Required Pages**:
 - `index.jsx`
-- `products.jsx`
-- `product/[id].jsx`
+- `products/index.jsx`
+- `products/[id].jsx`
 - `cart.jsx`
 - `checkout.jsx`
 - `signup.jsx`
@@ -148,10 +148,15 @@ export default function Home() {
 
 ### Example 2: Product Page (`src/pages/products/[id].jsx`)
 ```jsx
-export default function ProductPage({ id }) {
+import { useRouter } from 'next/router';
+
+export default function ProductPage() {
+  // For pages with dynamic routes, you can use the useRouter hook to get the route params
+  const router = useRouter();
+  const { id } = router.query; // Get 'id' from the route params
   return (
     <div>
-      <h1>Product Page for product &num; { id }</h1>
+      <h1>Product Page for product &#35; { id }</h1>
     </div>
   );
 }

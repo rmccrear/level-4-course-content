@@ -252,7 +252,7 @@ Follow a similar process to the Splash page for the signup page and the rest of 
 Example (Note 1: insert your own JSX and design choices into this component.) (Note 2: Don't forget to include PropTypes so you can validate the prop types in storybook.):
 ```jsx
 import PropTypes from 'prop-types';
-import Button from '@components/Button';
+import Button from '@/components/Button';
 
 export default function SignupForm({ buttonLabel }) {
   return (
@@ -301,7 +301,7 @@ git commit with a message like "Add Signin page form"
 **Starter code for Product Page**:
 ```jsx
 import products from '../../mocks/products.json';
-import Button from '@components/Button';
+import Button from '@/components/Button';
 
 // In Next.js, the id is passed as the second argument to the page component
 // this comes from the file name `products/[id].jsx`
@@ -328,7 +328,7 @@ export default function ProductPage(props, { id }) {
 **Example**: Note: insert your own JSX and design choices into this component:
 ```jsx
 import PropTypes from 'prop-types';
-import Button from '@components/Button';
+import Button from '@/components/Button';
 
 export default function ProductCard({ product }) {
   return (

@@ -143,7 +143,10 @@ It's a good idea to deploy your app to Vercel right away to ensure it works as e
 
 1. **Install Storybook**:
 
+Note: You will need to install `prop-types` to use Storybook. See the [Storybook documentation](https://storybook.js.org/docs/react/get-started/install) for more information.
+
    ```bash
+   npm install prop-types 
    npx storybook@latest init
    ```
 
@@ -272,10 +275,10 @@ Storybook may will already be running after the installation. If not, you can st
      ```
 
      Add one screenshot of the Storybook interface to your README.md. 
+
 ---
 
-
-## **5. Setup DaisyUI**
+## **4. Setup DaisyUI**
 
 1. **Install DaisyUI**:
 
@@ -309,7 +312,7 @@ Storybook may will already be running after the installation. If not, you can st
 
 ---
 
-## **6. Setup Custom DaisyUI Theme**
+## **5. Setup Custom DaisyUI Theme**
 
 1. **Use DaisyUI Theme Generator**:
    - Visit the [DaisyUI Theme Generator](https://daisyui.com/theme-generator/).
@@ -398,7 +401,7 @@ Storybook may will already be running after the installation. If not, you can st
 
 ---
 
-## **7. Create Custom CSS Rule for a Component**
+## **6. Create Custom CSS Rule for a Component**
 
 1. **Add Custom CSS**:
    - Example for `Navbar`:
@@ -427,7 +430,7 @@ Storybook may will already be running after the installation. If not, you can st
 
 ---
 
-## **8. Test and Create README.md**
+## **7. Test and Create README.md**
 
 1. **Test Application**:
    - Ensure all components work in Storybook and the app.
@@ -451,7 +454,7 @@ Storybook may will already be running after the installation. If not, you can st
      - Backend connection with a sample HelloBackend component.
      ```
 
-## **9. Commit and Push Changes**
+## **8. Commit and Push Changes**
 
 Make sure to commit your changes and push them to GitHub. Then check to see if your app is deployed on Vercel. You may have accidentally added something that causes an error in production, so it's good to check after each commit.
 
@@ -480,7 +483,7 @@ git branch -d setup-components
 
 Tomorrow, you will branch again from the main branch to continue working on the project.
 
-## **10. Submission**
+## **9. Submission**
 
 Submit the GitHub repository link for the project. Be sure to include the link to the deployed app on Vercel.
 

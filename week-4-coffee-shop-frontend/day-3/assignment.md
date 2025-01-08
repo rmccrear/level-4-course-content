@@ -7,6 +7,9 @@ Note: here are a few videos to help you understand the concepts for today.
 
 - [Prop Drilling](https://www.youtube.com/watch?v=RVFAyFWO4go&t=5750s)
 - [useState](https://www.youtube.com/watch?v=yvTGXH7uybA)
+- [Prop Drilling with Dave Gray](https://youtu.be/XyIXMQ9SZmI?si=t_ehkpkUbG2QPvO9)
+- [Song about Prop Drilling](https://youtu.be/92VByOqLwp0?si=HfO7ujSw0HXM4AQc)
+- [Deep Dive on Prop Drilling with Michael Jackson](https://www.youtube.com/watch?v=3XaXKiXtNjw)
 
 ---
 

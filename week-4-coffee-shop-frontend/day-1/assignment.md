@@ -287,15 +287,20 @@ Storybook may will already be running after the installation. If not, you can st
    ```
 
 2. **Configure DaisyUI**:
-   - Add DaisyUI to `tailwind.config.js`:
+   - Add DaisyUI to `tailwind.config.js`
+   - Add a theme to the DaisyUI configuration
 
      ```javascript
      module.exports = {
-       content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-       theme: {
-         extend: {},
-       },
+        content: [
+          "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+          "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+          "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+       ],
        plugins: [require("daisyui")],
+       daisyui: {
+        themes: ["coffee"]
+       }
      };
      ```
 

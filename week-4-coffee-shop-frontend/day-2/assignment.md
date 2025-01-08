@@ -194,6 +194,8 @@ In `index.jsx`, build a splash page that includes the following:
 
 - in `src/components/Button.jsx`:
   ```jsx
+  // update Button to include a handleClick prop
+  // update the JSX to include an onClick event to fire the handleClick function
   export default function Button({ label, handleClick }) {
     return (
       <button onClick={handleClick} className="btn btn-primary">
@@ -251,23 +253,49 @@ Follow a similar process to the Splash page for the signup page and the rest of 
 
 Example (Note 1: insert your own JSX and design choices into this component.) (Note 2: Don't forget to include PropTypes so you can validate the prop types in storybook.):
 ```jsx
+// src/components/LoginForm.jsx
 import PropTypes from 'prop-types';
 import Button from '@/components/Button';
 
-export default function SignupForm({ buttonLabel }) {
+export default function SignupForm({ buttonLabel, handleSignup }) {
   return (
     <form className="form">
       <input type="text" placeholder="Name" />
       <input type="email" placeholder="Email" />
       <input type="password" placeholder="Password" />
-      <Button label="Sign Up" handleClick={()=>{console.log("clicked sign up")}}/>
+      <Button label={buttonLabel} handleClick={handleSignup}/>
     </form>
   );
 }
 
 SignupForm.propTypes = {
   buttonLabel: PropTypes.string.isRequired,
+  handleLogin: PropTypes.func.isRequired,
 };
+```
+
+```jsx
+// src/pages/signup.jsx
+import { useRouter } from 'next/router';
+import SignupForm from '@/components/SignupForm';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
+export default function Signup() {
+  const router = useRouter();
+  function handleSignup() {
+    alert('Sign up clicked!');
+    router.push('/signin');
+  }
+  return (
+    <div>
+      <Navbar />
+      <h1>Sign Up</h1>
+      <SignupForm buttonLabel="Sign Up" handleSignup={() => console.log('Sign up clicked!')}/>
+      <Footer />
+    </div>
+  );
+}
 ```
 
 ### **Step 3**: Verify in Storybook
@@ -277,10 +305,35 @@ git commit with a message like "Add SignupForm component."
 
 ---
 
-## **4. Signin Page**
-- Reuse the `SignupForm` component for the `signin` page.
-- Pass `"Signin"` as the `buttonLabel` prop.
+## **4. Login Page**
+- Create a LoginForm component similar to the SignupForm component.
+- Pass `"Login"` as the `buttonLabel` prop.
 - Pass a different `handleClick` function to the `Button` component that logs "clicked sign in".
+
+**Login Component Example**:
+
+The Login Component is given here. Your challenge is to create a new Page component for LoginPage, just like the one for SignupPage.
+
+```jsx
+// src/components/LoginForm.jsx
+import PropTypes from 'prop-types';
+import Button from '@/components/Button';
+
+export default function LoginForm({ buttonLabel, handleLogin }) {
+  return (
+    <form className="form">
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <Button label={buttonLabel} handleClick={handleLogin}/>
+    </form>
+  );
+}
+
+LoginForm.propTypes = {
+  buttonLabel: PropTypes.string.isRequired,
+  handleLogin: PropTypes.func.isRequired,
+};
+```
 
 git commit with a message like "Add Signin page form"
 
@@ -302,10 +355,11 @@ git commit with a message like "Add Signin page form"
 ```jsx
 import products from '../../mocks/products.json';
 import Button from '@/components/Button';
+import { useRouter } from 'next/router';
 
-// In Next.js, the id is passed as the second argument to the page component
-// this comes from the file name `products/[id].jsx`
-export default function ProductPage(props, { id }) {
+export default function ProductPage() {
+  const router = useRouter();
+  const id = router.query.id;
   const product = products[id];
   return (
     <div>
@@ -350,11 +404,20 @@ ProductCard.propTypes = {
 ### **Step 3**: Verify in Storybook
 - Verify your story for `ProductCard` with mock product data.
 
+### **Step 4**: Update Product Page to include an event handler
+
+**Your challenge** is to create a function in `src/pages/products/[id].jsx` that will fire when the button is clicked. You can use `console.log` or `alert` to verify that the function is working.
+
+Look at the previous examples for how to pass a function to a component.
+
 git commit with a message like "Add Product page."
 
 ---
 
 ## **6. Products Page**
+
+The products page will display a list of products. You will use the `ProductCard` component to display each product. You will get the data from the mock products file and pass the data to the `ProductCard` components.
+
 - in `src/pages/products/index.jsx`, create a layout for the products page.
 - Use the `ProductCard` component to display a list of products.
 - Create mock data for products and iterate over them using `.map()`.

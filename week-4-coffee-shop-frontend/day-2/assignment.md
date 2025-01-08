@@ -8,6 +8,9 @@ Note: If you are unable to complete the full assignment, focus on the login page
 
 Here are some helpful resources you may look into:
 
+- [Your UI as a Tree](https://react.dev/learn/understanding-your-ui-as-a-tree) for understanding how to break down your UI into components.
+- [Rendering Lists](https://react.dev/learn/describing-the-ui#rendering-lists) for arrays of data
+- [Adding interactivity with React](https://react.dev/learn/adding-interactivity) for button clicks and form submissions.
 - [React Forms](https://daveceddia.com/react-forms/). You may find this helpful in day three when finish design and begin work on functionality.
 
 ---
@@ -350,6 +353,7 @@ git commit with a message like "Add Product page."
 - in `src/pages/products/index.jsx`, create a layout for the products page.
 - Use the `ProductCard` component to display a list of products.
 - Create mock data for products and iterate over them using `.map()`.
+- See [Rendering Lists](https://react.dev/learn/describing-the-ui#rendering-lists) in the React documentation for more information.
 
 Example:
 Note: you may put the mock data in a separate file and import it. You may also add test images to the `public` folder in your project.

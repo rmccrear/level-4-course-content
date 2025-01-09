@@ -341,7 +341,7 @@ git commit with a message like "Add Signin page form"
 
 ## **5. Product Page**
 ### **Step 1**: Layout
-- In `src/pages/product/[id].jsx`, create a layout for a single product page.
+- In `src/pages/products/[id].jsx`, create a layout for a single product page.
 - Include a header and footer.
 - import the data from the mock products file at `src/mocks/products.json`.
 - Create a product card displaying:
@@ -360,7 +360,7 @@ import { useRouter } from 'next/router';
 export default function ProductPage() {
   const router = useRouter();
   const id = router.query.id;
-  const product = products[id];
+  const product = products[id] || {};;
   return (
     <div>
       {/* TODO: Put this in CardProduct --> */}

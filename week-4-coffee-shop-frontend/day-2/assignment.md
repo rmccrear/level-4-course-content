@@ -360,7 +360,7 @@ import { useRouter } from 'next/router';
 export default function ProductPage() {
   const router = useRouter();
   const id = router.query.id;
-  const product = products[id] || {};;
+  const product = products[id] || {};
   return (
     <div>
       {/* TODO: Put this in CardProduct --> */}
@@ -463,7 +463,7 @@ git commit with a message like "Add Products page to display multiple products."
 - Use `ProductCard` to display cart items, with the button labeled `"Remove from Cart"`.
 - Add a `"Checkout"` button at the bottom.
 - Use Flexbox for layout.
-- Optional: Break the cart items into a `CartItems` component if you don't like the way it looks with a standard Product component.
+- Optional: Break the cart items into a `CartItem` component if you don't like the way it looks with a standard Product component.
 
 git commit with a message like "Add Cart page."
 

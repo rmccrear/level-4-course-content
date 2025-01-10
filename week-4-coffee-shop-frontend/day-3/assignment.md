@@ -198,6 +198,24 @@ git commit -m "Implement functionality for Shopping Cart Page with mock cart dat
 1. Add functionality to collect checkout information and save it to localStorage.
 2. Use a mock JSON object for order details.
 
+### Part 1: Implement a controlled form for checkout details:
+
+Controlled forms are a common pattern in react. React can't access the forms directly, so we need to `useState` and an `eventHandler` to manage the form data as it changes.
+
+See: React Controlled Components Video Series by Dave Gray
+
+[controlled input form](https://youtube.com/clip/UgkxMlQLhF7DnVLfai85NJuVOLscg3LADK_6?si=8SkJvHtU1DtyNRFg )
+
+[onSubmit form in React](https://youtube.com/clip/Ugkx4CNeNkBeZWkW4TqzQzzhuz8qa430enXN?si=sHnl0AfhLBSqQT0-)
+
+[preventDefault in React](https://youtube.com/clip/Ugkxo6vuWOzQ76KQEKMnQzVH5vWAGn9FRrwd?si=OX1mBJH3JZdk4Ne3)
+
+[reset state value of form after submit](https://youtube.com/clip/UgkxU3TiIymUsMD6sxNhIzqzeaA8MbfFpx3p?si=IpW89Nd4dCbOMsH-)
+
+Part 2: Implement a function to save the order details to localStorage.
+
+After the form is submitted (see the last video above), you can save the order details to localStorage. You can use the `saveCartToLocalStorage` function as a reference.
+
 ### **Git Commit**:
 ```bash
 git add src/pages/checkout.jsx
@@ -211,6 +229,8 @@ git commit -m "Implement functionality for Checkout Page with mock order data"
 ### **Instructions**:
 1. Replace the stub functions in `registerUser` and `signInUser` with functionality to save user data to localStorage.
 2. Validate user credentials on the login page using mock data.
+
+Be sure to implement controlled forms for the login and register pages. Then save the data to localStorage using the utility functions.
 
 ### **Git Commit**:
 ```bash

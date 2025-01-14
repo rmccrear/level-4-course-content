@@ -327,6 +327,10 @@ export const loginUserToLocalStorage = (user) => {
   localStorage.setItem('loggedInUser', JSON.stringify(user));
 };
 
+```
+
+```javascript
+
 import CartData from '@/mocks/cart.json';
 
 export function populateCartFromMockData() {

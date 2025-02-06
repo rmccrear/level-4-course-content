@@ -90,7 +90,59 @@ aws s3 sync ./my-folder s3://my-bucket/
 
 Goals: Create an EC2 instance, SSH into your instance, install a web server, and deploy a simple website.
 
-Challenges: Create an EC2 instance, clone one of your projects from GitHub, and deploy it using a web server, open the required PORT on the firewall.
+Note: When creating your EC2 Instance, create a Security Group that allows SSH, HTTP, and HTTPS.
+
+Here are the commands to run in your EC2 Instance.
+
+```bash
+sudo dnf update -y
+sudo dnf install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+cd /var/www/html
+sudo nano index.html # Add some HTML content here. (use ^O to save and ^X to exit)
+```
+
+Then you can navigate to your EC2 instance's public IP address in your browser to see the default Apache page. Note: Be sure you are using http:// and not https://. We have not set up SSL.
+
+Challenge: Create an EC2 instance, clone one of your projects from GitHub, and deploy it using a web server, open the required PORT on the firewall. 
+
+Here are some commands to get started...
+
+```bash
+sudo dnf update -y
+sudo dnf install git -y
+sudo dnf install -y nodejs
+git clone https://github.com/your-username/your-project.git
+cd your-project
+npm install
+nano .env # Add your environment variables here.
+npm start 
+```
+
+Challenge: use the `pm2` command to run your server on startup.
+
+Hint: use this prompt to ask an AI for help: "Instructions for cloning and setting up a node express server on an Amazon Linux 2023 AMI using dnf to install and ps2 to run it on startup in an EC2 instance."
+
+```bash
+sudo npm install -g pm2
+pm2 start index.js
+pm2 startup # Then run the generated command
+pm2 save # Save the current process list to run on startup
+```
+
+Challenge: Use user data to install Apache and deploy a website on an EC2 instance.
+
+```bash
+#!/bin/bash
+# User data script to install Apache and deploy a website on an EC2 instance.
+sudo yum update -y
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo echo "<h1>Hello World, lets start this instance up!</h1>" > /var/www/html/index.html
+```
 
 Extension: After we have deployed a site on EC2, we can use Route 53 to point a domain to our EC2 instance. We can use a routing strategy to route traffic to different instances round-robin style.
 
